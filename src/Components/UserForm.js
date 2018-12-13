@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
-// import history from './history';
+import {withRouter} from 'react-router-dom';
 
 
 
@@ -18,17 +18,21 @@ class UserForm extends Component {
   }
 
   signUphandleChange = (event) => {
-    console.log(event.target.value)
+    console.log(this.state)
     this.setState({
-      [event.target.name]: event.target.value
+      user: {
+        ...this.state.user,
+        [event.target.name]: event.target.value
+      }
     })
   }
 
   signUphandleSubmit = (event) => {
     event.preventDefault()
+    console.log(this.state)
     console.log("submitted")
-    const newuser = this.state.user
-    this.props.createNewUser(newuser)
+    // const newuser = this.state.user
+    // this.props.createNewUser(newuser)
     fetch(`http://localhost:3001/users`, {
       method: "POST",
       headers: {
@@ -40,19 +44,18 @@ class UserForm extends Component {
       })
     }).then(resp => resp.json())
     .then(user => {
+      console.log(user)
       localStorage.setItem('token', user.id)
       this.setState({
         user: user
       })
+      this.props.history.push("/cart")
     })
   }
 
 
 
-componentDidMount = (props) => {
-  console.log(this.props)
-  //search to see if the user already exists
-  //controller auth in rails
+componentDidMount = () => {
   let token = localStorage.getItem('token')
   console.log(token)
   if (token) {
@@ -69,7 +72,8 @@ componentDidMount = (props) => {
       this.setState({
         user:resp
       })
-      this.props.renderProps.history.push("/cart")
+      this.props.history.push("/cart")
+      // this.props.renderProps.history.push("/cart")
     })
 
 
@@ -77,7 +81,7 @@ componentDidMount = (props) => {
   }
   else {
     console.log('inside the else ');;
-    this.history.push('/home')
+    this.props.history.push('/login')
     // push them to the route you want
   }
 }
@@ -142,9 +146,9 @@ render() {
     <br></br>
     <form onSubmit={this.signUphandleSubmit}>
     username
-    <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
+    <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.user.username}/>
     password
-    <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
+    <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.user.password}/>
     <button>Submit</button>
     </form>
     <br></br>
@@ -182,4 +186,4 @@ render() {
 
 
 
-export default UserForm;
+export default withRouter(UserForm);
