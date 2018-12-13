@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 // import { Button } from 'react-bootstrap';
+import { connect } from 'react-redux'
+// import history from './history';
 
 
 
@@ -24,6 +26,9 @@ class UserForm extends Component {
 
   signUphandleSubmit = (event) => {
     event.preventDefault()
+    console.log("submitted")
+    const newuser = this.state.user
+    this.props.createNewUser(newuser)
     fetch(`http://localhost:3001/users`, {
       method: "POST",
       headers: {
@@ -44,7 +49,8 @@ class UserForm extends Component {
 
 
 
-componentDidMount = () => {
+componentDidMount = (props) => {
+  console.log(this.props)
   //search to see if the user already exists
   //controller auth in rails
   let token = localStorage.getItem('token')
@@ -63,7 +69,11 @@ componentDidMount = () => {
       this.setState({
         user:resp
       })
+      this.props.renderProps.history.push("/cart")
     })
+
+
+
   }
   else {
     console.log('inside the else ');;
@@ -157,9 +167,18 @@ render() {
 
 }
 
+// const mapStateToProps = (state) => {
+//   return {
+//     user: this.state.user
+//   }
+// }
 
-
-
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     createNewUser: (newuser) => {dispatch({type: "NEW_USER", payload: newuser})},
+//     // signInhandleChange: (userobj) => dispatch({type: "LOG_IN", payload: userobj})
+//   }
+// }
 
 
 
