@@ -126,7 +126,10 @@ render() {
 
   return(
     <div>
+    <br></br>
     Sign Up
+    <br></br>
+    <br></br>
     <form onSubmit={this.signUphandleSubmit}>
     username
     <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
@@ -134,7 +137,10 @@ render() {
     <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
     <button>Submit</button>
     </form>
+    <br></br>
     <label>Sign In</label>
+    <br></br>
+    <br></br>
     <form onSubmit={(e) => this.signInhandleSubmit(e)}>
     Username
     <input name="username" type="text" onChange={this.signInhandleChange} value={this.state.value}/>

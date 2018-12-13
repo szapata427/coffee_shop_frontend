@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import UserForm from '../src/Components/UserForm'
 import HomePage from '../src/Components/HomePage'
-import Header from '../src/Components/HomePage'
-import { Route, Switch, withRouter } from "react-router-dom";
+import Header from '../src/Components/Header'
+// import { Route, Switch, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, withRouter, Route } from 'react-router-dom';
+
 
 
 
@@ -11,13 +13,16 @@ import { Route, Switch, withRouter } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <div>
-        <Switch>
-          <Route path="/signup" exact render={() => (<UserForm />)} />
-          <Route path="/home" exact render={() => (<HomePage />)} />
-        </Switch>
+      <React.Fragment>
 
-      </div>
+          <Header />
+          <Switch>
+          <Route path="/login" exact render={() => (<UserForm />)} />
+          <Route path="/" exact render={() => (<HomePage />)} />
+          </Switch>
+
+
+      </React.Fragment>
     );
   }
 }
