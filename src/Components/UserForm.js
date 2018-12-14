@@ -146,9 +146,9 @@ render() {
     <br></br>
     <form onSubmit={this.signUphandleSubmit}>
     username
-    <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.user.username}/>
+    <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
     password
-    <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.user.password}/>
+    <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
     <button>Submit</button>
     </form>
     <br></br>
