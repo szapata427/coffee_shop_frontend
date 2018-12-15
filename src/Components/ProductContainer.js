@@ -10,9 +10,10 @@ class ProductContainer extends Component {
   }
 
 render() {
+  console.log(this.props.product)
   return (
     <div>
-    {this.mapProduct()}
+      {this.mapProduct()}
     </div>
   )
 }

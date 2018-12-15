@@ -10,3 +10,11 @@
 
    }
  }
+
+
+export const addProduct = (newproduct) => {
+  return {
+    type: "ADD_PRODUCT",
+    payload: newproduct
+  }
+}

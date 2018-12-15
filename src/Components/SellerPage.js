@@ -13,11 +13,11 @@ class SellerPage extends Component{
 
   mapProducts = () => {
     // console.log("mapping", this.props.coffeeProducts )
-     return (this.props.coffeeProducts.allProducts[0] ? <SellerProdContainer product={this.props.coffeeProducts.allProducts[0]} /> : null )
+     return (this.props.coffeeProducts.allProducts ? <SellerProdContainer product={this.props.coffeeProducts.allProducts} /> : null )
   }
 
 render() {
-
+console.log(this.props.coffeeProducts.allProducts)
   return(
 
     <React.Fragment>
@@ -28,7 +28,7 @@ render() {
 }
 }
 const mapStateToProps = ({products}) => {
-  // console.log(products)
+  console.log(products)
   return {
     coffeeProducts: products
   }

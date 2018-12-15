@@ -14,11 +14,11 @@ componentDidMount() {
 
 mapProducts = () => {
   // console.log("mapping", this.props.coffeeProducts )
-   return (this.props.coffeeProducts.allProducts[0] ? <ProductContainer product={this.props.coffeeProducts.allProducts[0]} /> : null )
+   return (this.props.coffeeProducts.allProducts ? <ProductContainer product={this.props.coffeeProducts.allProducts} /> : null )
 }
 
 render() {
-  // console.log(this.props.coffeeProducts.allProducts[0])
+  // console.log(this.props.coffeeProducts.allProducts)
   return(
     <div>
     This is the homepage

@@ -9,8 +9,9 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from "redux-thunk";
 import index from '../src/Store/Reducers/index'
+// import { composeWithDevTools } from 'redux-devtools-extension';
 
-
+// const middleware = [thunk]
 const store = createStore(index, applyMiddleware(thunk))
 
 ReactDOM.render(<Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>, document.getElementById('root'));
