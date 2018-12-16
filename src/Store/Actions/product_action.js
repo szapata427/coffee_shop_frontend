@@ -18,3 +18,20 @@ export const addProduct = (newproduct) => {
     payload: newproduct
   }
 }
+
+// export const addProduct = (newproduct) => {
+//   return (dispatch) => {
+//     return fetch(`http:localhost:3001/products`, {
+//       method: "POST",
+//       headers: {
+//         'Content-Type': "application/json",
+//         Accept: 'application/json'
+//       },
+//       body: JSON.stringify(newproduct)
+//     })
+//     .then(response => response.json())
+//     .then(product => {
+//       console.log(product)
+//     })
+//   }
+// }

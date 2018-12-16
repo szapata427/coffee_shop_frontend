@@ -30,3 +30,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+input:focus, select {
+  background-color: rgb(126, 182, 240);
+  width: 5%;
+  padding: 8px 5px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: white;
+  weight: 700;
+  font-size: 15px;
+  /* box-sizing: border-box; */
+}
+
+label {
+  padding: 5px;
+}

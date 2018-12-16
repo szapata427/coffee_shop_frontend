@@ -16,10 +16,12 @@ const reducer = (state = initialState, action) => {
 
     case "ADD_PRODUCT":
     const newproduct = action.payload
-    const allProductsArray = [...state.allProducts]
-    console.log(allProductsArray)
-      console.log("adding product", action.payload, state.allProducts[0])
+    // const allProductsArray = [...state.allProducts]
+    // console.log(allProductsArray)
+      console.log("adding product", action.payload, state.allProducts)
     return {allProducts: [...state.allProducts, newproduct]}
+
+
 
     default:
     return state

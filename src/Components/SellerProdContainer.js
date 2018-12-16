@@ -7,13 +7,19 @@ class SellerProdContainer extends Component {
   sellersProducts = () => {
     return this.props.product.filter(product => {
       return product["seller_id"] === 1
-    }).map(productinfo => <div> {productinfo.name} </div>)
-  }
+    }).map(productinfo => {
+      return <div>
+      <h2> {productinfo.name} </h2>
+      <h2> {productinfo.price} </h2>
+      </div>
+
+
+  })
+}
 
 
   render() {
     console.log(this.props.product)
-    // console.log(this.sellersProducts())
     return(
       <React.Fragment>
        {this.sellersProducts()}
