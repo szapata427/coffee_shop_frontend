@@ -30,26 +30,26 @@ handleSubmit = (event) => {
   // console.log(price.to_i)
 this.props.addProduct(this.state)
 
-// fetch(`http://localhost:3001/products`, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Accept: "application/json"
-//   },
-//   body: JSON.stringify({
-//     name: this.state.name,
-//     title: this.state.title,
-//     price: this.state.price,
-//     description:this.state.description,
-//     cost: this.state.cost,
-//     weight: this.state.weight,
-//     quantity: this.state.quantity,
-//     sku: this.state.sku,
-//     seller_id: this.state.seller_id
-//
-//   })
-// }).then(response => response.json())
-// .then(product => console.log(product))
+fetch(`http://localhost:3001/products`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({
+    name: this.state.name,
+    title: this.state.title,
+    price: this.state.price,
+    description:this.state.description,
+    cost: this.state.cost,
+    weight: this.state.weight,
+    quantity: this.state.quantity,
+    sku: this.state.sku,
+    seller_id: this.state.seller_id
+
+  })
+}).then(response => response.json())
+.then(product => console.log(product))
 
 }
 
