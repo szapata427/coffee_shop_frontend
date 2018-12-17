@@ -9,8 +9,14 @@ class SellerProdContainer extends Component {
       return product["seller_id"] === 1
     }).map(productinfo => {
       return <div>
-      <h2> {productinfo.name} </h2>
-      <h2> {productinfo.price} </h2>
+      <label>Name</label>
+      <h5> {productinfo.name} </h5>
+      <label>Price</label>
+      <h5> {productinfo.price} </h5>
+      <label>Description</label>
+      <h5> {productinfo.description} </h5>
+      <label>Title</label>
+      <h5> {productinfo.title} </h5>
       </div>
 
 

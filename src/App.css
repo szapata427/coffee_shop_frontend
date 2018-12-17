@@ -49,3 +49,9 @@ input:focus, select {
 label {
   padding: 5px;
 }
+
+.product-attribute {
+  float: left;
+  display: inline;
+  width: 49%;
+}
