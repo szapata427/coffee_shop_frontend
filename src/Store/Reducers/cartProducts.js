@@ -12,8 +12,16 @@ const reducer = (state = inititalState, action ) => {
     // console.log("hit product cart", state)
     return {cartProducts: [...state.cartProducts, productToCart]}
 
+    case "FETCH_CART":
+    // console.log("fetched cart", action.payload)
+    const fetchedCart = action.payload
+    return {cartProducts: fetchedCart}
+
+
     default:
     return state
+
+
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserForm from '../src/Components/UserForm'
+import SignUpForm from '../src/Components/SignUpForm'
 import HomePage from '../src/Components/HomePage'
 import Header from '../src/Components/Header'
 import Cart from '../src/Components/Cart'

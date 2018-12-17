@@ -45,7 +45,7 @@ class UserForm extends Component {
     }).then(resp => resp.json())
     .then(user => {
       console.log(user)
-      localStorage.setItem('token', user.id)
+      localStorage.setItem('token', user.jwt)
       this.setState({
         user: user
       })
@@ -60,7 +60,7 @@ componentDidMount = () => {
   console.log(token)
   if (token) {
     fetch(`http://localhost:3001/current_user`, {
-      method: "POST",
+      // method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accepts: "application/json",
@@ -110,6 +110,7 @@ signInhandleSubmit = (e) => {
     })
   }).then(response => response.json())
   .then(resp => { localStorage.setItem("token", resp.jwt)
+    debugger
   this.setState({
     user: resp.user
   })
@@ -185,5 +186,7 @@ render() {
 // }
 
 
-
+// const connectedContainer = connect(null, mapDispatchToProps)(UserForm)
+// const RoutedContainer = withRouter(connectedContainer)
+// export default RoutedContainer
 export default withRouter(UserForm);
