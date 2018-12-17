@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    background-image: url(./images/coffee_cup.jpg) !important;
+    background-size: 100%, 100% !important;
 }
 
 code {
@@ -16,6 +18,7 @@ code {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .topnav {

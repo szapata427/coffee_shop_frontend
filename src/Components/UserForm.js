@@ -99,6 +99,7 @@ signInhandleChange = (event) => {
 
 signInhandleSubmit = (e) => {
   e.preventDefault()
+  console.log(this.state.user)
   fetch(`http://localhost:3001/login`, {
     method: "POST",
     headers: {
@@ -109,11 +110,13 @@ signInhandleSubmit = (e) => {
       user: this.state.user
     })
   }).then(response => response.json())
-  .then(resp => { localStorage.setItem("token", resp.jwt)
-    debugger
-  this.setState({
-    user: resp.user
-  })
+  .then(resp => {
+      if (resp.jwt) {
+
+        console.log(resp)
+        this.setState({
+        })
+      }
 })
 
 }
