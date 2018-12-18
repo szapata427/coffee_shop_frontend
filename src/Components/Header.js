@@ -16,19 +16,19 @@ render() {
       Our Products
       </a>
 
-      <NavLink to="/seller">
+      <NavLink to="/seller" style={{width: "100px"}}>
         Seller Page
       </NavLink>
 
       <div>
-      <NavLink to="/">
+      <NavLink to="/"style={{width: "100px"}}>
         Home
       </NavLink>
       </div>
-      <NavLink to="/cart">
+      <NavLink to="/cart" style={{width: "100px"}}>
         Cart
       </NavLink>
-      <NavLink to="/login">
+      <NavLink to="/login" style={{width: "100px"}}>
         Login/LogOut
       </NavLink>
   </div>
