@@ -10,10 +10,11 @@ class AddProduct extends Component {
     name: "",
     price: null,
     description: "",
-    cost: null,
-    weight: null,
-    quantity: null,
-    sku: null,
+    image: "",
+    cost: "",
+    weight: "",
+    quantity: "",
+    sku: "",
     seller_id: 1
   }
 
@@ -21,12 +22,12 @@ handleChange = (event) => {
   // console.log(event.target.value)
   this.setState({
     [event.target.name] : event.target.value
-  })
+  }, () => console.log(this.state))
 }
 
 handleSubmit = (event) => {
   event.preventDefault()
-  // console.log(this.state)
+  console.log(this.state)
   // let price = this.state.price
   // console.log(price.to_i)
 this.props.addProduct(this.state)
@@ -41,7 +42,8 @@ fetch(`http://localhost:3001/products`, {
     name: this.state.name,
     title: this.state.title,
     price: this.state.price,
-    description:this.state.description,
+    description: this.state.description,
+    image: this.state.image,
     cost: this.state.cost,
     weight: this.state.weight,
     quantity: this.state.quantity,
@@ -60,7 +62,14 @@ imageSubmit = () => {
       cloudName: 'deq2mkfpe',
       uploadPreset: 'cxiy7mhw'},
       (error, result) => {
-    console.log(result.info.secure_url)});
+        if (result.info.secure_url){
+          this.setState({
+            image: result.info.secure_url
+          }, ()=> {
+            console.log(this.state)})
+          }
+        }
+      );
 }
 
 
@@ -77,21 +86,19 @@ render() {
         <input name="price" type="number" onChange={this.handleChange} placeholder="Price" value={this.state.value}/>
           <label>Description</label>
           <input name="description" type="text" onChange={this.handleChange} placeholder="Description" value={this.state.value}/>
-            <CloudinaryContext cloudName="deq2mkfpe">
-          <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-          <script>cloudinary.setCloudName(deq2mkfpe);</script>
-          <a href="#" id="upload_widget_opener" onClick={this.imageSubmit} >Upload multiple images</a>
-          </CloudinaryContext>
-
-
-          <label>Cost</label>
-          <input name="cost" type="number" onChange={this.handleChange} placeholder="Cost" value={this.state.value}/>
+            <label>Cost</label>
+            <input name="cost" type="number" onChange={this.handleChange} placeholder="Cost" value={this.state.value}/>
                 <label>Weight</label>
                 <input name="weight" type="number" onChange={this.handleChange} placeholder="Weight" value={this.state.value}/>
                   <label>Quantity</label>
                   <input name="quantity" type="number" onChange={this.handleChange} placeholder="Quantity" value={this.state.value}/>
                     <label>Sku</label>
                     <input name="sku" type="number" onChange={this.handleChange} placeholder="Sku" value={this.state.value}/>
+                    <div>
+                      <CloudinaryContext cloudName="deq2mkfpe" uploadPreset='UUUUUUUU'>
+                          <a id="upload_widget_opener" onClick={this.imageSubmit} >Upload Your Images</a>
+                      </CloudinaryContext>
+                    </div>
         <button>Submit</button>
 
       </form>

@@ -17,6 +17,7 @@ class SellerProdContainer extends Component {
       <h5> {productinfo.description} </h5>
       <label>Title</label>
       <h5> {productinfo.title} </h5>
+      <img src={productinfo.image} />
       </div>
 
 
