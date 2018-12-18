@@ -12,24 +12,21 @@ render() {
     <div class="header item">
       Colombia Coffee
     </div>
-    <a class="item" href="/">
-      Our Products
-      </a>
 
       <NavLink to="/seller" style={{width: "100px"}}>
         Seller Page
       </NavLink>
-
-      <div>
       <NavLink to="/"style={{width: "100px"}}>
         Home
       </NavLink>
-      </div>
       <NavLink to="/cart" style={{width: "100px"}}>
         Cart
       </NavLink>
       <NavLink to="/login" style={{width: "100px"}}>
-        Login/LogOut
+        Log-in
+      </NavLink>
+      <NavLink to="/signup" style={{width: "100px"}}>
+        Sign-up
       </NavLink>
   </div>
 

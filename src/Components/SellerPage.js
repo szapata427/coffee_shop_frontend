@@ -11,6 +11,16 @@ class SellerPage extends Component{
 
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // console.log(prevProps, prevState)
+   console.log(this.props.coffeeProducts.allProducts.length)
+   console.log(prevProps.coffeeProducts.allProducts.length)
+   if (prevProps.coffeeProducts.allProducts.length !== this.props.coffeeProducts.allProducts.length) {
+     this.props.fetchProducts()
+   }
+
+  }
+
   mapProducts = () => {
     // console.log("mapping", this.props.coffeeProducts )
      return (this.props.coffeeProducts.allProducts ? <SellerProdContainer product={this.props.coffeeProducts.allProducts} /> : null )

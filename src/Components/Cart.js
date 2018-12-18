@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchCart } from '../Store/Actions/cartActions'
 import CartProductsContainer from './CartProductsContainer'
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -10,7 +11,35 @@ class Cart extends Component {
 
   componentDidMount() {
     console.log("i have mounted")
-    this.props.fetchCart()
+
+    let token = localStorage.getItem('token')
+    console.log(token)
+    if (token) {
+      fetch(`http://localhost:3001/current_user`, {
+        // method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accepts: "application/json",
+          Authorization: token
+        }
+      }).then(response => response.json())
+      .then(resp => {
+        console.log(resp);
+        // this.setState({
+        //   user:resp
+        // })
+        this.props.fetchCart()
+        // this.props.renderProps.history.push("/cart")
+      })
+
+
+
+    }
+    else {
+      console.log('inside the else', this.props.history);;
+      this.props.history.push('/login')
+      // push them to the route you want
+    }
 
   }
 
@@ -41,4 +70,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default withRouter (connect(mapStateToProps, mapDispatchToProps)(Cart));

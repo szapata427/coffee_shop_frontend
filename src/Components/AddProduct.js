@@ -15,7 +15,7 @@ class AddProduct extends Component {
     weight: "",
     quantity: "",
     sku: "",
-    seller_id: 1
+    // seller_id: null
   }
 
 handleChange = (event) => {
@@ -48,7 +48,7 @@ fetch(`http://localhost:3001/products`, {
     weight: this.state.weight,
     quantity: this.state.quantity,
     sku: this.state.sku,
-    seller_id: this.state.seller_id
+    seller_id: this.props.currentUser["user_id"]
 
   })
 }).then(response => response.json())
@@ -107,6 +107,12 @@ render() {
 }
 }
 
+const mapStateToProps = ({user}) => {
+  // console.log(user.user)
+  return {
+    currentUser: user.user
+  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
   addProduct: (newproduct) => dispatch({
@@ -116,4 +122,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 }
 
-export default connect(null, mapDispatchToProps)(AddProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(AddProduct);
