@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddProduct from './AddProduct'
+import { connect } from 'react-redux'
 
 
 class SellerProdContainer extends Component {
@@ -36,4 +37,12 @@ class SellerProdContainer extends Component {
   }
 }
 
-export default SellerProdContainer;
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    currentUser: state
+  }
+}
+
+
+export default connect(mapStateToProps)(SellerProdContainer);

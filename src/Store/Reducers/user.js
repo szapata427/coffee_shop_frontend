@@ -1,22 +1,18 @@
 //
 //
 const initialState = {
-  user: {
-    username: "",
-    password: ""
-
-  }
+  user: ""
 }
 const reducer = (state = initialState, action) => {
-  const newState = {...state};
+  console.log("THIS IS USER STATE", state, action.type);
   switch(action.type) {
-    case "NEW_USER":
-    console.log(action.payload)
-    const theuser = action.payload
-    return {user: theuser}
+    case "CURRENT_USER":
+    console.log("user reducer", action.payload)
+    // const theuser = action.payload
+    return {...state,user: action.payload}
 
     default:
-    return newState;
+    return state;
   }
 
 

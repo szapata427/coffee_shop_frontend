@@ -6,7 +6,7 @@ import SellerProdContainer from './SellerProdContainer'
 class SellerPage extends Component{
 
   componentDidMount() {
-    console.log("i have mounted")
+    // console.log("i have mounted")
     this.props.fetchProducts()
 
   }

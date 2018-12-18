@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    background-image: url(./images/coffee_cup.jpg) !important;
+    /* background-image: url(./images/coffee_cup.jpg) !important; */
+    background-color: rgb(193, 254, 175) !important;
     background-size: 100%, 100% !important;
 }
 

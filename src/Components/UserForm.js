@@ -119,6 +119,7 @@ signInhandleSubmit = (e) => {
         //   user: resp.user
         // })
         localStorage.setItem('token', resp.jwt)
+        // console.log(this.props)
         this.props.history.push("/cart")
       }
 })
@@ -205,11 +206,6 @@ render() {
 </div>
 </div>
 </React.Fragment>
-
-
-
-
-
 
   )
 }
