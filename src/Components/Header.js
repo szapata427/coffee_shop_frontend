@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 // import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, FormInline, Dropdown, DropdownToggle, DropdownMenu,  DropdownItem } from "react-bootstrap";
 import {NavLink} from 'react-router-dom'
+import { connect } from 'react-redux';
+import { deleteUser } from '../Store/Actions/userActions'
 
 class Header extends Component {
 
+  deleteToken = () => {
+    localStorage.removeItem('token')
+    this.props.deleteUser()
+  }
 render() {
+
+
+
   return(
 
     <div class="ui huge menu">
@@ -28,6 +37,9 @@ render() {
       <NavLink to="/signup" style={{width: "100px"}}>
         Sign-up
       </NavLink>
+      <NavLink to="/" onClick={this.deleteToken}style={{width: "100px"}}>
+        Log Out
+      </NavLink>
   </div>
 
 
@@ -37,4 +49,11 @@ render() {
 
 }
 
-export default Header;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteUser: () => dispatch({type: "DELETE_USER"})
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Header);
