@@ -1,7 +1,11 @@
 //
 //
 const initialState = {
-  user: []
+  user: {
+    username: "",
+    password: ""
+
+  }
 }
 const reducer = (state = initialState, action) => {
   const newState = {...state};

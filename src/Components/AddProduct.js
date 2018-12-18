@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addProduct } from '../Store/Actions/product_action'
 import { connect } from 'react-redux'
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 class AddProduct extends Component {
 
@@ -53,6 +54,15 @@ fetch(`http://localhost:3001/products`, {
 
 }
 
+imageSubmit = () => {
+  var myUploadWidget;
+    myUploadWidget = window.cloudinary.openUploadWidget({
+      cloudName: 'deq2mkfpe',
+      uploadPreset: 'cxiy7mhw'},
+      (error, result) => {
+    console.log(result.info.secure_url)});
+}
+
 
 render() {
   return(
@@ -67,6 +77,13 @@ render() {
         <input name="price" type="number" onChange={this.handleChange} placeholder="Price" value={this.state.value}/>
           <label>Description</label>
           <input name="description" type="text" onChange={this.handleChange} placeholder="Description" value={this.state.value}/>
+            <CloudinaryContext cloudName="deq2mkfpe">
+          <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+          <script>cloudinary.setCloudName(deq2mkfpe);</script>
+          <a href="#" id="upload_widget_opener" onClick={this.imageSubmit} >Upload multiple images</a>
+          </CloudinaryContext>
+
+
           <label>Cost</label>
           <input name="cost" type="number" onChange={this.handleChange} placeholder="Cost" value={this.state.value}/>
                 <label>Weight</label>

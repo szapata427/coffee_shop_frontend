@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cloudinary-react": "^1.0.6",
     "history": "^4.7.2",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
@@ -12,7 +13,8 @@
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "semantic-ui": "^2.4.2"
+    "semantic-ui": "^2.4.2",
+    "semantic-ui-react": "^0.84.0"
   },
   "scripts": {
     "start": "react-scripts start",

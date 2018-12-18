@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import {withRouter} from 'react-router-dom';
+import { Form } from 'semantic-ui-react';
 
 
 
@@ -99,7 +100,7 @@ signInhandleChange = (event) => {
 
 signInhandleSubmit = (e) => {
   e.preventDefault()
-  console.log(this.state.user)
+  console.log("here", this.state.user)
   fetch(`http://localhost:3001/login`, {
     method: "POST",
     headers: {
@@ -114,8 +115,11 @@ signInhandleSubmit = (e) => {
       if (resp.jwt) {
 
         console.log(resp)
-        this.setState({
-        })
+        // this.setState({
+        //   user: resp.user
+        // })
+        localStorage.setItem('token', resp.jwt)
+        this.props.history.push("/cart")
       }
 })
 
@@ -143,33 +147,70 @@ signInhandleSubmit = (e) => {
 render() {
 
   return(
-    <div>
-    <br></br>
-    Sign Up
-    <br></br>
-    <br></br>
-    <form onSubmit={this.signUphandleSubmit}>
-    username
-    <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
-    password
-    <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.value}/>
-    <button>Submit</button>
-    </form>
-    <br></br>
-    <label>Sign In</label>
-    <br></br>
-    <br></br>
-    <form onSubmit={(e) => this.signInhandleSubmit(e)}>
-    Username
-    <input name="username" type="text" onChange={this.signInhandleChange} value={this.state.value}/>
-    password
-    <input name="password" type="text" onChange={this.signInhandleChange} value={this.state.value}/>
-    <button>LogIn</button>
-
-    </form>
-
-
+    <React.Fragment>
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <h2 class="ui image header">
+          <div class="content">
+            Sign Up
+          </div>
+        </h2>
+      <form onSubmit={this.signUphandleSubmit} class="ui large form" >
+      <div class="ui stacked secondary segment">
+        <div class="field">
+          <div class="ui left icon input">
+           <i class="user icon"></i>
+    <input name="username" type="text" onChange={this.signUphandleChange} value={this.state.value} placeholder="Username"/>
     </div>
+    <div class="field">
+      <div class="ui left icon input">
+       <i class="lock icon"></i>
+    <input name="password" type="text" onChange={this.signUphandleChange} value={this.state.value} placeholder="Password"/>
+       </div>
+       </div>
+     </div>
+       <button class="ui green button">Sign Up</button>
+        </div>
+        <div class="ui error message"></div>
+    </form>
+
+  </div>
+  </div>
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h2 class="ui image header">
+        <div class="content">
+          Sign -in to your account
+        </div>
+      </h2>
+    <form onSubmit={(e) => this.signInhandleSubmit(e)} class="ui large form" >
+    <div class="ui stacked secondary segment">
+      <div class="field">
+        <div class="ui left icon input">
+         <i class="user icon"></i>
+    <input name="username" type="text" onChange={this.signInhandleChange} value={this.state.value} placeholder="Username"/>
+    </div>
+
+  <div class="field">
+    <div class="ui left icon input">
+     <i class="lock icon"></i>
+  <input name="password" type="text" onChange={this.signInhandleChange} value={this.state.value} placeholder="Password"/>
+  </div>
+    </div>
+     </div>
+     <button class="ui green button">Log In</button>
+      </div>
+      <div class="ui error message"></div>
+  </form>
+</div>
+</div>
+</React.Fragment>
+
+
+
+
+
+
   )
 }
 

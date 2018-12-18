@@ -21,6 +21,17 @@ body {
 
 }
 
+body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    max-width: 450px;
+  }
+
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -44,3 +55,5 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+
+/* user login and signup css */
