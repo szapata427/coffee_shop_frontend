@@ -40,7 +40,13 @@ class App extends Component {
         //   user:resp
         // })
         this.props.currentUser(resp)
-        this.props.history.push("/cart")
+        if (resp.type === "Seller") {
+
+          this.props.history.push("/seller")
+        }
+        else if (resp.type === "Customer") {
+          this.props.history.push("/cart")
+        }
         // this.props.renderProps.history.push("/cart")
       })
     }

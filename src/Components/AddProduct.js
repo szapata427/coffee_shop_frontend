@@ -66,8 +66,7 @@ imageSubmit = () => {
         if (result.info.secure_url){
           this.setState({
             image: result.info.secure_url
-          }, ()=> {
-            console.log(this.state)})
+          })
           }
         }
       );

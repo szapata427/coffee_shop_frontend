@@ -20,7 +20,7 @@ class SellerPage extends Component{
         }
       }).then(response => response.json())
       .then(resp => {
-        console.log(resp);
+        // console.log(resp);
         // this.setState({
         //   user:resp
         // })
@@ -53,12 +53,12 @@ class SellerPage extends Component{
   }
 
   mapProducts = () => {
-    // console.log("mapping", this.props.coffeeProducts )
+    console.log("mapping", this.props.coffeeProducts )
      return (this.props.coffeeProducts.allProducts ? <SellerProdContainer product={this.props.coffeeProducts.allProducts} /> : null )
   }
 
 render() {
-console.log(this.props.coffeeProducts.allProducts)
+// console.log(this.props.coffeeProducts.allProducts)
   return(
 
     <React.Fragment>
@@ -69,7 +69,7 @@ console.log(this.props.coffeeProducts.allProducts)
 }
 }
 const mapStateToProps = ({products}) => {
-  console.log(products)
+  // console.log(products)
   return {
     coffeeProducts: products
   }

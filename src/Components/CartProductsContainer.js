@@ -5,11 +5,18 @@ import {withRouter} from 'react-router-dom'
 
 class CartProductsContainer extends Component {
 
+
   render() {
-    // console.log(this.props.productCart)
+    console.log(this.props.productCart)
     return(
       <div>
-      {this.props.currentUser.user_id == this.props.productCart.user_id ? this.props.productCart.name : null}
+      {this.props.currentUser.user_id == this.props.productCart.user_id ?
+    <React.Fragment>
+      <div> {this.props.productCart.name}</div>
+      <div> {this.props.productCart["total_price"]} </div>
+    </React.Fragment>
+
+: null}
     </div>
 
 

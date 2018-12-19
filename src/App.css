@@ -55,3 +55,19 @@ label {
   display: inline;
   width: 49%;
 }
+
+div.content {
+  background: white !important;
+  border-style: solid !important;
+ border-color: lightgreen !important;
+ border-radius: 7px !important;
+}
+
+img {
+max-width: 100% !important;
+max-height: 100% !important;
+width: auto !important;
+
+display: block !important;
+margin: 0 auto !important;
+}

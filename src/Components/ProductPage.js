@@ -13,7 +13,7 @@ state = {
 
 
 handleChange = (event, product) => {
-  console.log(event.target.value, product)
+  // console.log(event.target.value, product)
   this.setState({
     quantitySelected : event.target.value
   })
@@ -56,12 +56,27 @@ render() {
   return (
     <div>
       <form onSubmit={(e) => this.handleSubmit(e, product)}>
-      <div>Name: {product.name}</div><div>Price: {product.price}</div>
-      <div>Quantity Available: {product.quantity}</div>
-      <div><img src={product.image}/></div>
+        <div class="ui divided items">
+          <div class="item">
+            <div class="image">
+              <img src={product.image}/>
+              </div>
+              <div className="content">
+                <a class="header">{product.title}</a>
+                <div class="meta">
+                  <span class="cinema">{product.name} 14</span>
+                </div>
+                <label>Description</label>
+                <div class="description">
+                  <p>{product.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
       <input value={this.state.value} type="text" onChange={(event) => this.handleChange(event, product)} />
-
+      <div class="extra">
         <button class="ui basic button"><i class="shop icon"></i>Add To Cart</button>
+        </div>
       </form>
       </div>
   )
