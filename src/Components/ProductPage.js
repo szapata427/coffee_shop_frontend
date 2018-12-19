@@ -20,6 +20,8 @@ handleChange = (event, product) => {
 }
 
 handleSubmit = (e, cartproduct ) => {
+  console.log(this.props.currentUser)
+  console.log(this.props.productInCart.carts)
   e.preventDefault()
   // console.log(cartproduct, this.state)
     cartproduct["quantity"] = this.state.quantitySelected
@@ -28,7 +30,6 @@ handleSubmit = (e, cartproduct ) => {
     selectedProduct: cartproduct
   })
 
-  this.props.addProductCart(cartproduct)
 
   fetch(`http://localhost:3001/carts`, {
     method: "POST",
@@ -45,7 +46,11 @@ handleSubmit = (e, cartproduct ) => {
       product_id: cartproduct.id
     })
   }).then(response => response.json())
-  .then(cart => console.log(cart))
+  .then(cart => {
+    console.log(cart)
+    this.props.addProductCart(cart)
+
+  })
 
 }
 
@@ -83,9 +88,12 @@ render() {
 }
 }
 
-const mapStateToProps = ({user}) => {
+const mapStateToProps = state => {
+  // console.log(state.cartProducts.cartProducts)
+  // console.log(state.user.user)
   return {
-    currentUser: user.user
+    currentUser: state.user.user,
+    productInCart: state.cartProducts.cartProducts
   }
 }
 

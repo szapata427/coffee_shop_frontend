@@ -47,12 +47,27 @@ class SignUpForm extends Component {
     }).then(resp => resp.json())
     .then(user => {
       console.log(user)
-      localStorage.setItem('token', user.jwt)
+      // debugger
+      if (user.error != "does not work") {
+
+        this.props.currentUser(user)
+        localStorage.setItem('token', user.jwt)
+
+        if (user.type === "Customer") {
+          this.props.history.push("/cart")
+
+        }
+        else if (user.type === "Seller"){
+          this.props.history.push("/seller")
+        }
+        else {
+          const nouser = ""
+          this.props.currentUser(nouser)
+        }
+      }
       // this.setState({
       //   user: user
       // })
-      this.props.currentUser(user)
-      this.props.history.push("/cart")
     })
   }
 

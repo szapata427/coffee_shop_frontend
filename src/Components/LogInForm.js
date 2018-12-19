@@ -79,8 +79,17 @@ class LoginForm extends Component {
           // })
           this.props.currentUser(resp)
           localStorage.setItem('token', resp.jwt)
+          if(resp.type === "Customer") {
+
+            this.props.history.push("/cart")
+          }
+
+          else if (resp.type === "Seller") {
+            this.props.history.push("/cart")
+
+          }
+
           // console.log(this.props)
-          this.props.history.push("/cart")
         }
   })
 

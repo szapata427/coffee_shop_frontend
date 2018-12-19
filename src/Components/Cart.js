@@ -35,7 +35,7 @@ class Cart extends Component {
 
     }
     else {
-      console.log('inside the else', this.props.history);;
+      // console.log('inside the else', this.props.history);;
       this.props.history.push('/login')
       // push them to the route you want
     }
