@@ -27,7 +27,7 @@ handleChange = (event) => {
 
 handleSubmit = (event) => {
   event.preventDefault()
-  console.log(this.state)
+  // console.log(this.state)
   // let price = this.state.price
   // console.log(price.to_i)
 this.props.addProduct(this.state)
@@ -52,7 +52,7 @@ fetch(`http://localhost:3001/products`, {
 
   })
 }).then(response => response.json())
-.then(product => console.log(product))
+// .then(product => console.log(product))
 
 }
 
@@ -62,6 +62,7 @@ imageSubmit = () => {
       cloudName: 'deq2mkfpe',
       uploadPreset: 'cxiy7mhw'},
       (error, result) => {
+        console.log(result)
         if (result.info.secure_url){
           this.setState({
             image: result.info.secure_url
@@ -95,11 +96,11 @@ render() {
                     <label>Sku</label>
                     <input name="sku" type="number" onChange={this.handleChange} placeholder="Sku" value={this.state.value}/>
                     <div>
-                      <CloudinaryContext cloudName="deq2mkfpe" uploadPreset='UUUUUUUU'>
+                      <CloudinaryContext cloudName="deq2mkfpe">
                           <a id="upload_widget_opener" onClick={this.imageSubmit} >Upload Your Images</a>
                       </CloudinaryContext>
                     </div>
-        <button>Submit</button>
+        <button class="ui basic button"><i class="shop icon"></i>Add Product</button>
 
       </form>
     </React.Fragment>

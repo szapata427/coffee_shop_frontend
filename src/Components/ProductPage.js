@@ -41,7 +41,7 @@ handleSubmit = (e, cartproduct ) => {
       quantity: cartproduct.quantity,
       total_price: 10,
       ordered: false,
-      user_id: 1,
+      user_id: this.props.currentUser.user_id,
       product_id: cartproduct.id
     })
   }).then(response => response.json())
@@ -51,7 +51,7 @@ handleSubmit = (e, cartproduct ) => {
 
 
 render() {
-  console.log(this.props.product)
+  // console.log(this.props.product)
   const {product} = this.props
   return (
     <div>
@@ -61,12 +61,19 @@ render() {
       <div><img src={product.image}/></div>
       <input value={this.state.value} type="text" onChange={(event) => this.handleChange(event, product)} />
 
-      <button>Add To Cart</button>
+        <button class="ui basic button"><i class="shop icon"></i>Add To Cart</button>
       </form>
       </div>
   )
 }
 }
+
+const mapStateToProps = ({user}) => {
+  return {
+    currentUser: user.user
+  }
+}
+
 
 const mapDispatchToProps = (dispatch) => {
   // console.log("hit dispatch")
@@ -77,4 +84,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(null, mapDispatchToProps)(ProductPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);

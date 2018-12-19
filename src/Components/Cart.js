@@ -10,7 +10,6 @@ class Cart extends Component {
 
 
   componentDidMount() {
-    
 
     let token = localStorage.getItem('token')
     console.log(token)
@@ -47,6 +46,7 @@ class Cart extends Component {
   //   console.log(this.props.cartProducts.carts ? )
   // const cartArray =  this.props.cartProducts.carts.map(cart => <CartProductsContainer productCart={cart} />)
 
+  console.log(this.props.cartProducts.carts)
     return(
       <div>
       Welcome to your Cart!
@@ -57,7 +57,7 @@ class Cart extends Component {
 }
 
 const mapStateToProps = ({cartProducts}) => {
-  // console.log(cartProducts.cartProducts)
+  console.log(cartProducts.cartProducts)
   return {
     cartProducts: cartProducts.cartProducts
   }

@@ -13,7 +13,7 @@ class Header extends Component {
 render() {
 
 
-
+// console.log(this.props.currentUser)
   return(
 
     <div class="ui huge menu">
@@ -22,24 +22,25 @@ render() {
       Colombia Coffee
     </div>
 
-      <NavLink to="/seller" style={{width: "100px"}}>
-        Seller Page
-      </NavLink>
+
       <NavLink to="/"style={{width: "100px"}}>
         Home
       </NavLink>
-      <NavLink to="/cart" style={{width: "100px"}}>
+      {this.props.currentUser.type === "Customer" ? <NavLink to="/cart" style={{width: "100px"}}>
         Cart
-      </NavLink>
+      </NavLink> : null}
       <NavLink to="/login" style={{width: "100px"}}>
         Log-in
       </NavLink>
       <NavLink to="/signup" style={{width: "100px"}}>
         Sign-up
       </NavLink>
-      <NavLink to="/" onClick={this.deleteToken}style={{width: "100px"}}>
+      {this.props.currentUser? <NavLink to="/signUp" onClick={this.deleteToken}style={{width: "100px"}}>
         Log Out
-      </NavLink>
+      </NavLink> : null}
+    { this.props.currentUser.type === "Seller" ? <NavLink to="/seller" style={{width: "100px"}}>
+        Seller Page
+      </NavLink>: null}
   </div>
 
 
@@ -49,6 +50,12 @@ render() {
 
 }
 
+const mapStateToProps = state => {
+  // console.log(state.user.user)
+  return {
+    currentUser: state.user.user
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -56,4 +63,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
