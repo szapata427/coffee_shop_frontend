@@ -21,7 +21,7 @@ render() {
   // console.log(this.props.coffeeProducts.allProducts)
   return(
     <div>
-    This is the homepage
+    <h1>Enjoy our Coffee</h1>
     {this.mapProducts()}
     </div>
   )

@@ -7,6 +7,7 @@ import Header from '../src/Components/Header'
 import Cart from '../src/Components/Cart'
 import SellerPage from '../src/Components/SellerPage'
 import LoginForm from '../src/Components/LogInForm'
+import IndividualProductInfo from '../src/Components/IndividualProductInfo'
 import { currentUser } from '../src/Store/Actions/userActions'
 
 

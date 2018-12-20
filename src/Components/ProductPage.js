@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProductCart } from '../Store/Actions/cartActions'
+import IndividualProductInfo from './IndividualProductInfo';
 
 class ProductPage extends Component {
 
@@ -22,8 +23,8 @@ handleChange = (event, product) => {
 }
 
 handleSubmit = (e, cartproduct ) => {
-  console.log(this.props.currentUser)
-  console.log(this.props.productInCart.carts)
+  // console.log(this.props.currentUser)
+  // console.log(this.props.productInCart.carts)
   e.preventDefault()
   // console.log(cartproduct, this.state)
     cartproduct["quantity"] = this.state.quantitySelected
@@ -49,16 +50,22 @@ handleSubmit = (e, cartproduct ) => {
     })
   }).then(response => response.json())
   .then(cart => {
-    console.log(cart)
+    // console.log(cart)
     this.props.addProductCart(cart)
 
   })
 
 }
 
+clickedProduct = (event, clickedProduct) => {
+  // console.log(clickedProduct)
+  this.props.productClicked(clickedProduct)
+}
+
 
 render() {
   // console.log(this.props.product)
+  // console.log(this.props)
   const {product} = this.props
 
   var quantityArray = []
@@ -66,13 +73,14 @@ render() {
     quantityArray.push(i)
   }
 
+
   return (
     <div>
       <form onSubmit={(e) => this.handleSubmit(e, product)}>
         <div class="ui divided items">
           <div class="item">
             <div class="image">
-              <img src={product.image}/>
+              <img src={product.image} onClick={(event) => this.clickedProduct(event, product)}/>
               </div>
               <div className="content">
                 <a class="header">{product.title}</a>
@@ -89,12 +97,12 @@ render() {
 
       { parseInt(product.quantity) > 0 ?
         <React.Fragment>
-          <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown">
+          <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown"><option value="0">Quantity</option>
             {quantityArray.map(num => <option value={num.toString()}>{num}</option> )}
           </select>
               <div class="extra">
-                <button class="ui basic button"><i class="shop icon"></i>Add To Cart</button>
-              </div></React.Fragment> : <span>Sold Out</span>}
+                <button class="ui primary button"><i class="shop icon"></i>Add To Cart</button>
+              </div></React.Fragment> : <span id="soldout">Sold Out</span>}
       </form>
     </div>
   )

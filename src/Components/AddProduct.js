@@ -94,11 +94,11 @@ render() {
                   <input name="quantity" type="number" onChange={this.handleChange} placeholder="Quantity" value={this.state.value}/>
                     <label>Sku</label>
                     <input name="sku" type="number" onChange={this.handleChange} placeholder="Sku" value={this.state.value}/>
-                    <div>
+
                       <CloudinaryContext cloudName="deq2mkfpe">
-                          <a id="upload_widget_opener" onClick={this.imageSubmit} >Upload Your Images</a>
+                          <button id="upload_widget_opener" onClick={this.imageSubmit}><i class="camera icon"></i>Upload Your Image</button>
                       </CloudinaryContext>
-                    </div>
+                    
         <button class="ui basic button"><i class="shop icon"></i>Add Product</button>
 
       </form>

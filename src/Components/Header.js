@@ -24,7 +24,7 @@ render() {
 
     <div className="ui item">
       <NavLink to="/"style={{width: "100px"}}>
-        Home
+        Products
       </NavLink>
     </div>
     <div className="ui item">

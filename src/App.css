@@ -58,9 +58,9 @@ label {
 }
 
 div.content {
-  background: rgb(251, 247, 212) !important;
+  background: rgb(216, 235, 232) !important;
   border-style: solid !important;
- border-color: rgb(201, 237, 196) !important;
+ border-color: rgb(184, 206, 244) !important;
  border-radius: 7px !important;
 }
 
@@ -71,4 +71,13 @@ width: auto !important;
 
 display: block !important;
 margin: 0 auto !important;
+}
+
+#soldout {
+  font-size: 25px;
+  background-color: red;
+  border-radius: 5px;
+  padding: 3px;
+  color: white;
+  margin: 5px;
 }
