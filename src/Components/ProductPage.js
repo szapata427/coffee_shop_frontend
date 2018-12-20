@@ -13,7 +13,9 @@ state = {
 
 
 handleChange = (event, product) => {
-  // console.log(event.target.value, product)
+
+  console.log(event.target.value, product)
+  // debugger
   this.setState({
     quantitySelected : event.target.value
   })
@@ -25,7 +27,7 @@ handleSubmit = (e, cartproduct ) => {
   e.preventDefault()
   // console.log(cartproduct, this.state)
     cartproduct["quantity"] = this.state.quantitySelected
-    console.log(cartproduct)
+    // console.log(cartproduct)
   this.setState({
     selectedProduct: cartproduct
   })
@@ -58,6 +60,12 @@ handleSubmit = (e, cartproduct ) => {
 render() {
   // console.log(this.props.product)
   const {product} = this.props
+
+  var quantityArray = []
+  for (var i = 1; i < parseInt(product.quantity); i++) {
+    quantityArray.push(i)
+  }
+
   return (
     <div>
       <form onSubmit={(e) => this.handleSubmit(e, product)}>
@@ -69,7 +77,7 @@ render() {
               <div className="content">
                 <a class="header">{product.title}</a>
                 <div class="meta">
-                  <span class="cinema">{product.name} 14</span>
+                  <span class="cinema">{product.name} </span>
                 </div>
                 <label>Description</label>
                 <div class="description">
@@ -78,12 +86,17 @@ render() {
               </div>
             </div>
           </div>
-      <input value={this.state.value} type="text" onChange={(event) => this.handleChange(event, product)} />
-      <div class="extra">
-        <button class="ui basic button"><i class="shop icon"></i>Add To Cart</button>
-        </div>
+
+      { parseInt(product.quantity) > 0 ?
+        <React.Fragment>
+          <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown">
+            {quantityArray.map(num => <option value={num.toString()}>{num}</option> )}
+          </select>
+              <div class="extra">
+                <button class="ui basic button"><i class="shop icon"></i>Add To Cart</button>
+              </div></React.Fragment> : <span>Sold Out</span>}
       </form>
-      </div>
+    </div>
   )
 }
 }
@@ -105,6 +118,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+// <input value={this.state.value} type="text" onChange={(event) => this.handleChange(event, product)} />
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);
