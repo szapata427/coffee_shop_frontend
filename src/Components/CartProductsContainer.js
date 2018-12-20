@@ -13,7 +13,8 @@ class CartProductsContainer extends Component {
       {this.props.currentUser.user_id == this.props.productCart.user_id ?
     <React.Fragment>
       <div> {this.props.productCart.name}</div>
-      <div> {this.props.productCart["total_price"]} </div>
+      <div> Total Price: {this.props.productCart["total_price"]} </div>
+      <div> quantity: ${this.props.productCart.quantity * this.props.productCart["total_price"]} </div>
     </React.Fragment>
 
 : null}

@@ -46,6 +46,7 @@ input:focus, select {
   /* box-sizing: border-box; */
 }
 
+
 label {
   padding: 5px;
 }
@@ -57,9 +58,9 @@ label {
 }
 
 div.content {
-  background: white !important;
+  background: rgb(251, 247, 212) !important;
   border-style: solid !important;
- border-color: lightgreen !important;
+ border-color: rgb(201, 237, 196) !important;
  border-radius: 7px !important;
 }
 
