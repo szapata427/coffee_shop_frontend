@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+
 .App {
   text-align: center;
 }
@@ -80,4 +82,76 @@ margin: 0 auto !important;
   padding: 3px;
   color: white;
   margin: 5px;
+}
+
+#product-info-main-container {
+  display: flex;
+  position: fixed;
+  top: 25vh; left: 50vw;
+  text-align: center;
+  align-items: flex-start;
+}
+
+#product-info-main-container div {
+  font-family: 'Sarabun', sans-serif;
+  margin: 20px;
+}
+
+#product-info-name {
+  font-size: 40px;
+  /* position: absolute; */
+  /* right: 350px;
+  top: 150px; */
+
+}
+
+#product-info-title {
+  font-size: 23px;
+  /* position: absolute; */
+  /* right: 330px; */
+  /* text-align: center; */
+  /* top: 190px; */
+  font-family: 'Sarabun', sans-serif;
+
+}
+#product-info-price {
+  font-size: 20px;
+  /* position: absolute; */
+  /* right: 440px;
+  top: 230px; */
+  /* text-align: center; */
+}
+
+#product-info-description {
+  font-size: 20px;
+  /* position: absolute; */
+  max-width: 30vw;
+  /* right:0px;
+  top: 300px; */
+  /* text-align: center; */
+}
+
+#product-info-image {
+  font-size: 20px;
+  display: inline !important;
+  /* position: absolute; */
+  /* left: 700px; */
+  padding: 2px;
+  /* bottom: 450px; */
+  border: 1px solid black;
+  border-radius: 11px;
+
+}
+
+.ui.dropdown {
+  width: 70px !important;
+  height: 30px !important;
+  font-size: 12px !important;
+  margin: 2px !important;
+
+}
+
+button.ui.green.button {
+  font-size: 12px !important;
+  margin: 2px !important;
 }

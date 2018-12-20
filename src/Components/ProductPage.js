@@ -97,11 +97,11 @@ render() {
 
       { parseInt(product.quantity) > 0 ?
         <React.Fragment>
-          <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown"><option value="0">Quantity</option>
+          <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown"><option value="0">Qty</option>
             {quantityArray.map(num => <option value={num.toString()}>{num}</option> )}
           </select>
               <div class="extra">
-                <button class="ui primary button"><i class="shop icon"></i>Add To Cart</button>
+                <button class="ui green button"><i class="shop icon"></i>Add To Cart</button>
               </div></React.Fragment> : <span id="soldout">Sold Out</span>}
       </form>
     </div>
