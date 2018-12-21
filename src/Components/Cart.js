@@ -57,7 +57,7 @@ class Cart extends Component {
 }
 
 const mapStateToProps = ({cartProducts}) => {
-  console.log(cartProducts.cartProducts)
+  console.log(cartProducts)
   return {
     cartProducts: cartProducts.cartProducts
   }
