@@ -17,7 +17,9 @@ const reducer = (state = inititalState, action ) => {
     // console.log("fetched cart", action.payload)
     const fetchedCart = action.payload
     console.log(fetchedCart);
-    return {cartProducts: fetchedCart}
+    let filteredCurrentCarts = fetchedCart.carts.filter(cart => cart.ordered === false)
+    console.log(filteredCurrentCarts)
+    return {cartProducts: {carts:filteredCurrentCarts}}
 
     case "DELETE_CART":
     console.log("delete cart state", state)

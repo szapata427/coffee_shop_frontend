@@ -95,13 +95,13 @@ render() {
                     <label>Sku</label>
                     <input name="sku" type="number" onChange={this.handleChange} placeholder="Sku" value={this.state.value}/>
 
+                    <button class="ui basic button"><i class="shop icon"></i>Add Product</button>
+        </form>
                       <CloudinaryContext cloudName="deq2mkfpe">
                           <button id="upload_widget_opener" onClick={this.imageSubmit}><i class="camera icon"></i>Upload Your Image</button>
                       </CloudinaryContext>
-                    
-        <button class="ui basic button"><i class="shop icon"></i>Add Product</button>
 
-      </form>
+
     </React.Fragment>
   )
 }

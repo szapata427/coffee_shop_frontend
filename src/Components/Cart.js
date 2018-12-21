@@ -42,24 +42,57 @@ class Cart extends Component {
 
   }
 
-  render() {
-  //   console.log(this.props.cartProducts.carts ? )
-  // const cartArray =  this.props.cartProducts.carts.map(cart => <CartProductsContainer productCart={cart} />)
+  cartCheckout = (e, carts) => {
+    console.log(this.props.cartProducts.carts)
+    console.log(this.props.user)
+     let cartFiltered = this.props.cartProducts.carts.filter(cart =>  cart.user_id === this.props.user.user_id)
+     let orderedCarts = cartFiltered.map(cart =>
+     { cart.ordered = ( cart.ordered === false ? true : false)
+       return cart
 
-  console.log(this.props.cartProducts.carts)
+     })
+
+     console.log(orderedCarts)
+     orderedCarts.forEach(cart => {
+       return fetch(`http://localhost:3001/carts/${cart.id}`, {
+         method: "PATCH",
+         headers: {
+           "Content-Type": "application/json",
+           Accept: "application/json"
+         },
+         body: JSON.stringify({
+           ordered: cart.ordered
+         })
+       }).then(response => response.json())
+       .then(resp => {
+         console.log(resp)
+       })
+     })
+
+
+  }
+
+  render() {
+    // console.log(this.props.cartProducts.carts)
+    // let usersCarts
+
+
+
     return(
       <div>
       Welcome to your Cart!
-      {this.props.cartProducts.carts ? this.props.cartProducts.carts.map(cart => <CartProductsContainer key={cart.id} productCart={cart} />) : <div>Your Carty is empty</div> }
+      {this.props.cartProducts.carts ? this.props.cartProducts.carts.filter(cart =>  cart.user_id === this.props.user.user_id).map(cart => <CartProductsContainer key={cart.id} productCart={cart} />) : <div>Your Carty is empty</div> }
+      <button onClick={this.cartCheckout}>Check-out</button>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({cartProducts}) => {
-  console.log(cartProducts)
+const mapStateToProps = (state) => {
+  // console.log(state.cartProducts.cartProducts)
   return {
-    cartProducts: cartProducts.cartProducts
+    cartProducts: state.cartProducts.cartProducts,
+    user: state.user.user
   }
 }
 

@@ -16,7 +16,7 @@ render() {
 // console.log(this.props.currentUser)
   return(
 
-  <div class="ui huge menu">
+  <div class="ui massive menu">
 
     <div className="ui item" style={{color: "red"}}>
       Colombia Coffee
