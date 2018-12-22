@@ -14,6 +14,14 @@ export const deletedCart = (cart) => {
   }
 }
 
+export const cartOrdered = () => {
+  return {
+    type: "CART_ORDERED",
+    payload: []
+  }
+
+}
+
 export function fetchCart() {
   return (dispatch) => {
     return  fetch(`http://localhost:3001/carts`)

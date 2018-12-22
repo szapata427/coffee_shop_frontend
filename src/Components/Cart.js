@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { fetchCart } from '../Store/Actions/cartActions'
 import CartProductsContainer from './CartProductsContainer'
 import {withRouter} from 'react-router-dom'
+import  { cartOrdered }  from '../Store/Actions/cartActions'
 
 
 
@@ -52,7 +53,8 @@ class Cart extends Component {
 
      })
 
-     console.log(orderedCarts)
+     this.props.cartOrdered()
+
      orderedCarts.forEach(cart => {
        return fetch(`http://localhost:3001/carts/${cart.id}`, {
          method: "PATCH",
@@ -98,7 +100,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchCart: () => dispatch(fetchCart())
+    fetchCart: () => dispatch(fetchCart()),
+    cartOrdered: () => dispatch(cartOrdered())
   }
 }
 

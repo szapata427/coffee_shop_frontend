@@ -35,6 +35,10 @@ const reducer = (state = inititalState, action ) => {
 
     return {cartProducts: {carts: newArray}}
 
+    case "CART_ORDERED":
+    console.log("deleting everything in cart", state)
+    return {cartProducts: {carts: []}}
+
 
     default:
     return state
