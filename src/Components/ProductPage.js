@@ -25,13 +25,25 @@ handleChange = (event, product) => {
 handleSubmit = (e, cartproduct ) => {
   // console.log(this.props.currentUser)
   // console.log(this.props.productInCart.carts)
+  console.log(cartproduct)
   e.preventDefault()
-  // console.log(cartproduct, this.state)
-    cartproduct["quantity"] = this.state.quantitySelected
-    // console.log(cartproduct)
+  console.log(cartproduct, this.state)
+  console.log(this.state.quantitySelected)
+    // cartproduct["quantity"] = this.state.quantitySelected
+    console.log(cartproduct)
   this.setState({
     selectedProduct: cartproduct
   })
+
+// let productExists = this.props.productInCart.carts.map(cart => {
+//   if (cart.product_id === cartproduct.id) {
+//     return cart
+//   }
+// })
+//
+// console.log(productExists)
+
+  // if(this.props.productInCart.carts)
 
 
   fetch(`http://localhost:3001/carts`, {
@@ -42,7 +54,7 @@ handleSubmit = (e, cartproduct ) => {
     },
     body: JSON.stringify({
       name: cartproduct.name,
-      quantity: cartproduct.quantity,
+      quantity: this.state.quantitySelected,
       total_price: 10,
       ordered: false,
       user_id: this.props.currentUser.user_id,
@@ -58,13 +70,11 @@ handleSubmit = (e, cartproduct ) => {
 }
 
 clickedProduct = (event, clickedProduct) => {
-  // console.log(clickedProduct)
   this.props.productClicked(clickedProduct)
 }
 
 
 render() {
-  // console.log(this.props.product)
   // console.log(this.props)
   const {product} = this.props
 
@@ -75,35 +85,26 @@ render() {
 
 
   return (
-    <div>
+    <div class="main-home-product-container">
+      <div class="secondary-home-container">
       <form onSubmit={(e) => this.handleSubmit(e, product)}>
-        <div class="ui divided items">
-          <div class="item">
-            <div class="image">
-              <img src={product.image} onClick={(event) => this.clickedProduct(event, product)}/>
-              </div>
-              <div className="content">
-                <a class="header">{product.title}</a>
-                <div class="meta">
-                  <span class="cinema">{product.name} </span>
-                </div>
-                <label>Description</label>
-                <div class="description">
-                  <p>{product.description}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
+              <img class="home-product-image" src={product.image} onClick={(event) => this.clickedProduct(event, product)}/>
+                <a id="main-title">{product.title}</a>
+                <p class="home-product-name">{product.name} </p>
+                <div>
+      </div>
 
       { parseInt(product.quantity) > 0 ?
         <React.Fragment>
           <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown"><option value="0">Qty</option>
             {quantityArray.map(num => <option value={num.toString()}>{num}</option> )}
           </select>
-              <div class="extra">
-                <button class="ui green button"><i class="shop icon"></i>Add To Cart</button>
-              </div></React.Fragment> : <span id="soldout">Sold Out</span>}
+
+                <button class="add-to-cart-button"><i class="shop icon"></i>Add To Cart</button>
+              </React.Fragment> : <span id="soldout">Sold Out</span>}
       </form>
+      </div>
     </div>
   )
 }

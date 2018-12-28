@@ -44,8 +44,7 @@ class Cart extends Component {
   }
 
   cartCheckout = (e, carts) => {
-    console.log(this.props.cartProducts.carts)
-    console.log(this.props.user)
+    // console.log(this.props.allProducts)
      let cartFiltered = this.props.cartProducts.carts.filter(cart =>  cart.user_id === this.props.user.user_id)
      let orderedCarts = cartFiltered.map(cart =>
      { cart.ordered = ( cart.ordered === false ? true : false)
@@ -67,15 +66,59 @@ class Cart extends Component {
          })
        }).then(response => response.json())
        .then(resp => {
-         console.log(resp)
+         // console.log(resp)
        })
      })
 
+     let cartArray = []
+     let productArray = []
 
-  }
+     let theProducts = this.props.allProducts
+     let subtractQuantity = theProducts.map(product => {
+       orderedCarts.map(cart => {
+         // console.log(cart, product)
+      if (cart.product_id == product.id) {
+        console.log(cart, product)
+        cartArray.push(cart)
+        productArray.push(product)
+      }
+       })
+     })
+
+  let productQty;
+  let cartQty;
+
+  cartArray.forEach(cart => {
+    productArray.forEach(product => {
+      if(product.id === cart.product_id) {
+        productQty = product.quantity
+        cartQty = cart.quantity
+        let quantityRemaining = productQty - cartQty
+        console.log(quantityRemaining)
+
+        return fetch(`http://localhost:3001/products/${product.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            quantity: quantityRemaining
+          })
+        }).then(response => response.json())
+        .then(resp => {
+          console.log(resp)
+        })
+
+    }
+  })
+
+
+})
+}
 
   render() {
-    // console.log(this.props.cartProducts.carts)
+    // console.log(this.props.allProducts)
     // let usersCarts
 
 
@@ -91,10 +134,10 @@ class Cart extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state.cartProducts.cartProducts)
   return {
     cartProducts: state.cartProducts.cartProducts,
-    user: state.user.user
+    user: state.user.user,
+    allProducts: state.products.allProducts
   }
 }
 

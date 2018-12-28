@@ -18,39 +18,39 @@ render() {
 
   <div class="ui massive menu">
 
-    <div className="ui item" style={{color: "red"}}>
+    <div className="ui item" style={{color: "black"}}>
       Colombia Coffee
     </div>
 
     <div className="ui item">
-      <NavLink to="/"style={{width: "100px", color: "white"}}>
+      <NavLink to="/"style={{width: "100px", color: "black"}}>
         Products
       </NavLink>
     </div>
     <div className="ui item">
-      {this.props.currentUser.type === "Customer" ? <NavLink to="/cart" style={{width: "100px", color: "white"}}>
+      {this.props.currentUser.type === "Customer" ? <NavLink to="/cart" style={{width: "100px", color: "black"}}>
         Cart
       </NavLink> : null}
     </div>
       <div className="right menu">
          <div className="ui item">
-           <NavLink to="/login" style={{width: "100px", color: "white"}}>
+           <NavLink to="/login" style={{width: "100px", color: "black"}}>
              Log-in
            </NavLink>
          </div>
 
        <div className="ui item">
-      <NavLink to="/signup" style={{width: "100px", color: "white"}}>
+      <NavLink to="/signup" style={{width: "100px", color: "black"}}>
         Sign-up
       </NavLink>
     </div>
     <div className="ui item">
-      {this.props.currentUser? <NavLink to="/signUp" onClick={this.deleteToken}style={{width: "100px", color: "white"}}>
+      {this.props.currentUser? <NavLink to="/signUp" onClick={this.deleteToken}style={{width: "100px", color: "black"}}>
         Log Out
       </NavLink> : null}
     </div>
     <div className="ui item">
-    { this.props.currentUser.type === "Seller" ? <NavLink to="/seller" style={{width: "100px", color: "white"}}>
+    { this.props.currentUser.type === "Seller" ? <NavLink to="/seller" style={{width: "100px", color: "black"}}>
         Seller Page
       </NavLink>: null}
     </div>

@@ -9,9 +9,13 @@ const reducer = (state = inititalState, action ) => {
     case "ADD_PRODUCT_CART":
     const productToCart = action.payload
     console.log(productToCart)
+    console.log(state)
     console.log("hit product cart", state.cartProducts)
     const addArray = [...state.cartProducts.carts, productToCart]
+    console.log(addArray)
     return {cartProducts: {carts: addArray}}
+
+
 
     case "FETCH_CART":
     // console.log("fetched cart", action.payload)
@@ -20,6 +24,8 @@ const reducer = (state = inititalState, action ) => {
     let filteredCurrentCarts = fetchedCart.carts.filter(cart => cart.ordered === false)
     console.log(filteredCurrentCarts)
     return {cartProducts: {carts:filteredCurrentCarts}}
+
+
 
     case "DELETE_CART":
     console.log("delete cart state", state)
