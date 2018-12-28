@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchProducts } from '../Store/Actions/product_action'
 import ProductContainer from './ProductContainer'
+import SaleHeader from './SaleHeader'
 
 
 class HomePage extends Component {
@@ -20,7 +21,9 @@ mapProducts = () => {
 render() {
   // console.log(this.props.coffeeProducts.allProducts)
   return(
+
     <div>
+      <SaleHeader />
     <h1>Enjoy our Coffee</h1>
     {this.mapProducts()}
     </div>

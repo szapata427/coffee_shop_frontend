@@ -61,6 +61,19 @@ label {
 
 .ui.massive.menu {
   background-color: rgb(254, 254, 254) !important;
+  margin-bottom: 0px !important;
+}
+
+#sale-header {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  /* padding-top: 20px; */
+  font-size: 20px;
+  height:  40px;
+  line-height: 40px;
+  border-radius: 2px;
+
 }
 
 /* homepage */
@@ -128,6 +141,7 @@ div.content {
   /* border-style: solid !important; */
  /* border-color: rgb(219, 245, 244) !important; */
  border-radius: 7px !important;
+ margin-top: 30px;
 }
 
 /* img {
@@ -220,6 +234,12 @@ margin: 0 auto !important;
   margin: 3px !important;
 
 
+}
+
+#signup-select {
+  width: 130px ;
+  background-color: grey;
+  color: white;
 }
 
 

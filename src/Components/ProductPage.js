@@ -22,6 +22,8 @@ handleChange = (event, product) => {
   })
 }
 
+
+
 handleSubmit = (e, cartproduct ) => {
   // console.log(this.props.currentUser)
   // console.log(this.props.productInCart.carts)
@@ -30,7 +32,11 @@ handleSubmit = (e, cartproduct ) => {
   console.log(cartproduct, this.state)
   console.log(this.state.quantitySelected)
     // cartproduct["quantity"] = this.state.quantitySelected
-    console.log(cartproduct)
+    let quantitySel = this.state.quantitySelected
+    let productPrice = cartproduct.price
+    let totalCartPrice = quantitySel * productPrice
+    // console.log(totalCartPrice)
+    // console.log(cartproduct)
   this.setState({
     selectedProduct: cartproduct
   })
@@ -55,7 +61,7 @@ handleSubmit = (e, cartproduct ) => {
     body: JSON.stringify({
       name: cartproduct.name,
       quantity: this.state.quantitySelected,
-      total_price: 10,
+      total_price: totalCartPrice,
       ordered: false,
       user_id: this.props.currentUser.user_id,
       product_id: cartproduct.id

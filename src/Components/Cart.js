@@ -25,9 +25,7 @@ class Cart extends Component {
       }).then(response => response.json())
       .then(resp => {
         console.log(resp);
-        // this.setState({
-        //   user:resp
-        // })
+
         this.props.fetchCart()
         // this.props.renderProps.history.push("/cart")
       })
@@ -36,7 +34,7 @@ class Cart extends Component {
 
     }
     else {
-      // console.log('inside the else', this.props.history);;
+
       this.props.history.push('/login')
       // push them to the route you want
     }
@@ -125,7 +123,8 @@ class Cart extends Component {
 
     return(
       <div>
-      Welcome to your Cart!
+      Hello, {this.props.user.username}
+      <p>Welcome to your cart!</p> 
       {this.props.cartProducts.carts ? this.props.cartProducts.carts.filter(cart =>  cart.user_id === this.props.user.user_id).map(cart => <CartProductsContainer key={cart.id} productCart={cart} />) : <div>Your Carty is empty</div> }
       <button onClick={this.cartCheckout}>Check-out</button>
       </div>
