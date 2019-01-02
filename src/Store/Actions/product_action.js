@@ -19,6 +19,13 @@ export const addProduct = (newproduct) => {
   }
 }
 
+export const sellerDeleteProduct = (deletedProduct) => {
+  return {
+    type: "DELETE_PRODUCT",
+    payload: deletedProduct
+  }
+}
+
 // export const addProduct = (newproduct) => {
 //   return (dispatch) => {
 //     return fetch(`http:localhost:3001/products`, {

@@ -17,7 +17,15 @@ const reducer = (state = initialState, action) => {
       console.log("adding product", action.payload, state.allProducts)
     return {allProducts: [...state.allProducts, newproduct]}
 
-
+    case "DELETE_PRODUCT":
+    console.log("Deleting your product", action.payload)
+    let filteredArray = state.allProducts.filter(product => {
+      return product.id !== action.payload.id
+    })
+    // debugger
+    return {
+      allProducts: filteredArray
+    }
 
     default:
     return state
