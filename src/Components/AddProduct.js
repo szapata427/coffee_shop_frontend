@@ -77,13 +77,13 @@ render() {
   return(
 
     <React.Fragment>
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} class="add-product-form">
         <label>Title</label>
         <input name="title" type="text" onChange={this.handleChange} placeholder="Title" value={this.state.value}/>
         <label>Name</label>
         <input name="name" type="text" onChange={this.handleChange} placeholder="Name" value={this.state.value}/>
         <label>Price</label>
-        <input name="price" type="number" onChange={this.handleChange} placeholder="Price" value={this.state.value}/>
+        <input name="price" type="number" step="0.01" onChange={this.handleChange} placeholder="Price" value={this.state.value}/>
           <label>Description</label>
           <input name="description" type="text" onChange={this.handleChange} placeholder="Description" value={this.state.value}/>
             <label>Cost</label>
@@ -95,7 +95,7 @@ render() {
                     <label>Sku</label>
                     <input name="sku" type="number" onChange={this.handleChange} placeholder="Sku" value={this.state.value}/>
 
-                    <button class="ui basic button"><i class="shop icon"></i>Add Product</button>
+                    <button class="add-product-button"><i class="shop icon"></i>Add Product</button>
         </form>
                       <CloudinaryContext cloudName="deq2mkfpe">
                           <button id="upload_widget_opener" onClick={this.imageSubmit}><i class="camera icon"></i>Upload Your Image</button>

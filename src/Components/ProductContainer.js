@@ -33,7 +33,7 @@ class ProductContainer extends Component {
   }
 
 render() {
-  // console.log(this.props.product)
+  console.log(this.props.clickedProduct)
   return (
     <React.Fragment>
 
@@ -48,7 +48,7 @@ render() {
               <div id="product-info-description"> {this.state.clickedProduct.description}</div>
             </div>
           </div>
-          <button onClick={this.clearState}>All Products</button>
+          <button class="back-allproducts-button" onClick={this.clearState}> Back to Products</button>
           </React.Fragment>
       }
     </React.Fragment>

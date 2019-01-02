@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|PT+Sans+Caption|Patua+One|Source+Code+Pro|Yantramanav" rel="stylesheet">
 
 .App {
   text-align: center;
@@ -62,6 +63,12 @@ label {
 .ui.massive.menu {
   background-color: rgb(254, 254, 254) !important;
   margin-bottom: 0px !important;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+.ui.item:hover {
+  background-color: lightblue !important;
+  transform: scale(1.05) !important;
 }
 
 #sale-header {
@@ -70,7 +77,7 @@ label {
   color: white;
   /* padding-top: 20px; */
   font-size: 20px;
-  height:  40px;
+  height:  45px;
   line-height: 40px;
   border-radius: 2px;
 
@@ -83,10 +90,10 @@ label {
   float: left;
   /* width: 33.33%; */
   width: 20%;
-   padding: 10px;
-   text-align: center;
-   top: 20vh; left: 20vw;
-   margin: 20px;
+  padding: 10px;
+  text-align: center;
+  top: 20vh; left: 20vw;
+  margin: 20px;
 
 
 }
@@ -106,14 +113,21 @@ label {
 }
 
 .home-product-name {
-margin-top: 3px;
+margin-top: 2px;
+font-size: 19px;
+margin-bottom: 4px;
 
+}
+
+.home-product-price {
+  font-size: 19px;
 }
 
 .home-product-image {
   width:  300px;
-  height: 350px;
-  margin-bottom: 4px;
+  height: 420px;
+  /* margin-bottom: 8px; */
+  padding-bottom: 20px;
 }
 
 .add-to-cart-button {
@@ -121,12 +135,13 @@ margin-top: 3px;
   background-color: orange;
   color: white;
   border-radius: 3px;
-  padding: 7px 13px;
+  padding: 7px 35px;
   transition-duration: 0.4s;
 
 }
 .add-to-cart-button:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: blue; /* Green */
+  /* background-color: #4CAF50; /* Green */ */
   color: white;
 }
 
@@ -134,6 +149,8 @@ margin-top: 3px;
 
 #main-title {
   white-space: nowrap;
+  font-size: 20px;
+
 }
 
 div.content {
@@ -169,47 +186,51 @@ margin: 0 auto !important;
   text-align: center;
   align-items: flex-start;
   /* padding: 40px; */
+  margin-top: 60px;
 }
 
 #product-info-main-container div {
-  font-family: 'Sarabun', sans-serif;
+  /* font-family: 'Sarabun', sans-sexrif; */
+    font-family: 'PT Sans Caption', sans-serif;
+  /* font-family: 'Source Code Pro', monospace; */
+  /* font-family: 'PT Sans Caption', sans/-serif; */
   margin: 20px;
 }
 
 #product-info-name {
-  font-size: 40px;
-  padding-bottom: 10px;
-  /* position: absolute; */
-  /* right: 350px;
-  top: 150px; */
+  font-size: 27px;
+  padding-bottom: 15px;
+  font-family: 'Source Code Pro', monospace;
+  /* font-family: 'Patua One', cursive; */
+  /* font-family: 'PT Sans Caption', sans-serif; */
+  border-bottom: 3px solid grey;
+
 
 }
 
 #product-info-title {
-  font-size: 23px;
-  padding-bottom: 10px;
-  /* position: absolute; */
-  /* right: 330px; */
-  /* text-align: center; */
-  /* top: 190px; */
-  font-family: 'Sarabun', sans-serif;
+  font-size: 40px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid grey;
 
 }
 #product-info-price {
   font-size: 20px;
-  /* position: absolute; */
-  /* top: 230px; */
-  /* text-align: center; */
   margin-right: 120px !important;
 }
 
 #product-info-description {
-  font-size: 15px;
+  font-size: 16px;
   /* position: absolute; */
   max-width: 30vw;
-  /* right:0px;
-  top: 300px; */
-  /* text-align: center; */
+  line-height: 21px;
+  border-top: 3px solid grey;
+  padding-top: 12px;
+}
+
+#product-info-description:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  font-size: 15px;
 }
 
 #product-info-image {
@@ -225,6 +246,18 @@ margin: 0 auto !important;
 
 
 
+}
+
+.back-allproducts-button {
+  margin-left: 25px;
+  width: 140px;
+  height: 40px;
+  font-size: 15px;
+  background-color: lightblue;
+  font-weight: 800px;
+  font-family: 'Yantramanav', sans-serif;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 
 .ui.dropdown {
@@ -248,4 +281,148 @@ margin: 0 auto !important;
   background-color: red;
   border-radius: 9px;
   font-size: 16px;
+}
+
+
+/* sellerpage */
+
+.main-sellerpage-container {
+  text-align: left;
+  border: solid;
+  border-radius: 4px;
+  margin: 4px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+}
+
+.seller-product-description {
+padding-left: 4px;
+font-size: 16px;
+
+}
+
+.seller-product-info-image {
+  max-height: 160px;
+  max-width: 160px;
+}
+
+.label-seller-product-info {
+  font-size: 20px;
+}
+
+.seller-product-info {
+  font-size: 16px;
+}
+
+.label-seller-product-title-info{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.seller-product-info-title {
+  font-size: 16px;
+}
+
+.add-product-form {
+  font-size: 15px;
+  padding: 0px;
+}
+
+.add-product-button {
+  margin: 5px;
+  border-radius: 6px;
+  padding: 7px;
+  background-color: blue;
+  color: white;
+}
+
+/* cartpage */
+
+.cart-page-main-container {
+  width: 90%;
+  margin: 70px;
+  text-align: center;
+  margin-bottom: 10px;
+  /* margin-top: 30px; */
+  display: flex;
+    /* float: left; */
+  border-bottom: 2px solid grey;
+
+}
+
+.cart-page-image {
+  max-width: 350px;
+  max-height: 350px;
+  margin-bottom: 10px;
+}
+
+
+
+.cart-page-name {
+  font-size: 20px;
+  color: blue;
+}
+
+.cart-customer-name {
+  font-size: 28px;
+  padding-left: 120px;
+  padding-top: 30px;
+}
+
+.checkout-button {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 800px;
+  margin-top: 50px;
+  width: 170px;
+  background-color: orange;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  color: black;
+}
+
+.checkout-button:hover {
+  background-color: blue;
+  color: white;
+  /* font-family: 'PT Sans Caption', sans-serif; */
+  font-family: 'Luckiest Guy', sans-serif;
+  transform: scale(1.2);
+}
+
+.secondary-cart-container {
+  /* width: 33.33%; */
+  display: flex;
+    float: left;
+    font-family: 'Yantramanav', sans-serif;
+
+}
+
+.cart-delete-button {
+  width: 125px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+  margin-left: 50px;
+  display: absolute;
+  overflow: hidden;
+}
+
+.cart-page-totalprice {
+  font-size: 20px;
+  margin-left: 13px;
+  /* margin: auto; */
+}
+
+.cart-page-quantity {
+font-size: 20px;
+margin-left: 13px;
+}
+
+.cart-page-price-per-item {
+font-size: 20px;
+margin-left: 13px;
 }
