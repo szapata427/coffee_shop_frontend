@@ -24,7 +24,7 @@ render() {
 
     <div>
       <SaleHeader />
-    <h1>Enjoy our Coffee</h1>
+    <div className="home-message">Colombia Coffee Shop</div>
     {this.mapProducts()}
     </div>
   )

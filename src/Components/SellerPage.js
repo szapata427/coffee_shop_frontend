@@ -62,7 +62,7 @@ render() {
   return(
 
     <React.Fragment>
-      <h1>Welcome to seller Central</h1>
+      <div class="seller-message">Welcome to Your Products</div>
       {this.mapProducts()}
     </React.Fragment>
   )

@@ -90,10 +90,12 @@ label {
   float: left;
   /* width: 33.33%; */
   width: 20%;
-  padding: 10px;
+  height: 20%;
+  padding: 15px;
   text-align: center;
   top: 20vh; left: 20vw;
-  margin: 20px;
+  margin: 30px;
+
 
 
 }
@@ -106,9 +108,10 @@ label {
    border-style: hidden;
    border-color: rgb(221, 219, 226);
    /* margin: 10px; */
-   padding: 20px;
+   padding-bottom: 50px;
    border-radius: 7px;
    border-width: 1px;
+
 
 }
 
@@ -124,11 +127,12 @@ margin-bottom: 4px;
 }
 
 .home-product-image {
-  width:  300px;
-  height: 420px;
+  max-width:  250px;
+  max-height: 250px;
   /* margin-bottom: 8px; */
   padding-bottom: 20px;
 }
+
 
 .add-to-cart-button {
   font-size: 13px;
@@ -143,6 +147,24 @@ margin-bottom: 4px;
   background-color: blue; /* Green */
   /* background-color: #4CAF50; /* Green */ */
   color: white;
+}
+
+.product-image-home{
+  width: 250px;
+  height: 250px;
+}
+
+.home-message {
+  margin-top: 40px;
+  margin-left: 550px;
+  margin-right: 550px;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: blue;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 13px;
+  border-bottom: 2px solid black;
 }
 
 
@@ -186,7 +208,7 @@ margin: 0 auto !important;
   text-align: center;
   align-items: flex-start;
   /* padding: 40px; */
-  margin-top: 60px;
+  margin-top: 75px;
 }
 
 #product-info-main-container div {
@@ -194,7 +216,7 @@ margin: 0 auto !important;
     font-family: 'PT Sans Caption', sans-serif;
   /* font-family: 'Source Code Pro', monospace; */
   /* font-family: 'PT Sans Caption', sans/-serif; */
-  margin: 20px;
+  margin: 10px;
 }
 
 #product-info-name {
@@ -204,19 +226,23 @@ margin: 0 auto !important;
   /* font-family: 'Patua One', cursive; */
   /* font-family: 'PT Sans Caption', sans-serif; */
   border-bottom: 3px solid grey;
+  padding-top: 7px;
 
 
 }
 
 #product-info-title {
-  font-size: 40px;
+  font-size: 30px;
   padding-bottom: 15px;
   border-bottom: 3px solid grey;
+  padding-top: 7px;
 
 }
 #product-info-price {
   font-size: 20px;
   margin-right: 120px !important;
+  padding-bottom: 12px;
+  padding-top: 12px;
 }
 
 #product-info-description {
@@ -229,7 +255,7 @@ margin: 0 auto !important;
 }
 
 #product-info-description:hover {
-  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   font-size: 15px;
 }
 
@@ -241,10 +267,12 @@ margin: 0 auto !important;
   margin-right: 80px !important;
   margin-top: 80px !important;
   /* bottom: 450px; */
-  max-width: 450px;
-  max-height: 450px;
+  max-width: 300px;
+  max-height: 400px;
+}
 
-
+#product-info-image:hover{
+  transform: scale(1.3);
 
 }
 
@@ -288,53 +316,141 @@ margin: 0 auto !important;
 
 .main-sellerpage-container {
   text-align: left;
-  border: solid;
-  border-radius: 4px;
-  margin: 4px;
+  /* border: 2px solid; */
+  border-radius: 10px;
+  margin: 20px;
   padding-left: 10px;
   padding-bottom: 10px;
+  background-color: lightblue;
+  color: black;
+  /* box-shadow: 0 0 5px 3px lightgreen; */
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 500;
 
 }
 
 .seller-product-description {
 padding-left: 4px;
 font-size: 16px;
+font-family: 'Yantramanav', sans-serif;
 
 }
 
 .seller-product-info-image {
-  max-height: 160px;
-  max-width: 160px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .label-seller-product-info {
-  font-size: 20px;
+  font-size: 17px;
+  font-family: 'Yantramanav', sans-serif;
+  color: black;
 }
 
 .seller-product-info {
   font-size: 16px;
+  font-family: 'Yantramanav', sans-serif;
 }
 
 .label-seller-product-title-info{
-  font-size: 20px;
+  font-size: 17px;
   margin-bottom: 10px;
   margin-top: 10px;
+  color: black;
+
 }
 .seller-product-info-title {
-  font-size: 16px;
+  font-size: 17px;
+  font-family: 'Yantramanav', sans-serif;
 }
 
 .add-product-form {
   font-size: 15px;
+  font-family: 'Yantramanav', sans-serif;
   padding: 0px;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+
 }
 
 .add-product-button {
   margin: 5px;
   border-radius: 6px;
-  padding: 7px;
+  padding: 5px;
   background-color: blue;
   color: white;
+  border-bottom: 3px solid black;
+}
+
+/* ::placeholder {
+  color: black;
+  opacity: 1;
+} */
+
+.seller-deletebutton {
+  background-color: red;
+  width: 120px;
+  height: 50px;
+  color: white;
+  float: right;
+  margin-right: 40px;
+  font-size: 17px;
+
+}
+
+#upload_widget_opener {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-left: 20px;
+  width: 180px;
+  height: 40px;
+  background-color: orange;
+  color: white;
+}
+
+.add-product-sign {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  /* border: 3px solid grey; */
+  height: 60px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: lightblue;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-bottom: 50px;
+
+}
+
+.seller-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.seller-username {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.seller-currentProducts {
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.seller-totalProducts {
+  font-size: 20px;
+  margin-left: 30px;
+  color: blue;
 }
 
 /* cartpage */
@@ -352,9 +468,10 @@ font-size: 16px;
 }
 
 .cart-page-image {
-  max-width: 350px;
-  max-height: 350px;
+  max-width: 250px;
+  max-height: 250px;
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 
@@ -362,6 +479,7 @@ font-size: 16px;
 .cart-page-name {
   font-size: 20px;
   color: blue;
+  margin-right: 20px;
 }
 
 .cart-customer-name {
@@ -372,10 +490,11 @@ font-size: 16px;
 
 .checkout-button {
   font-size: 20px;
-  margin-bottom: 20px;
-  margin-left: 800px;
+  margin-bottom: 50px;
+  margin-left: 520px;
+  margin-right: 300px;
   margin-top: 50px;
-  width: 170px;
+  width: 350px;
   background-color: orange;
   border-radius: 4px;
   border-style: solid;

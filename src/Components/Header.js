@@ -19,7 +19,9 @@ render() {
   <div class="ui massive menu">
 
     <div className="ui item" style={{color: "black"}}>
-      Colombia Coffee
+      <NavLink to="/"style={{width: "150px", color: "black"}}>
+        Colombia Coffee
+      </NavLink>
     </div>
 
     <div className="ui item">
@@ -27,11 +29,11 @@ render() {
         Products
       </NavLink>
     </div>
-    <div className="ui item">
-      {this.props.currentUser.type === "Customer" ? <NavLink to="/cart" style={{width: "100px", color: "black"}}>
+    
+      {this.props.currentUser.type === "Customer" ? <div className="ui item"><NavLink to="/cart" style={{width: "100px", color: "black"}}>
         {this.props.currentUser.username} Cart
-      </NavLink> : null}
-    </div>
+      </NavLink></div> : null}
+
       <div className="right menu">
          <div className="ui item">
            <NavLink to="/login" style={{width: "100px", color: "black"}}>

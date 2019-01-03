@@ -34,6 +34,12 @@ class SellerProdContainer extends Component {
     <label class="label-seller-product-title-info">Title:</label>
       <span class="seller-product-info-title"> {productinfo.title} </span>
       <br></br>
+      <label class="label-seller-product-title-info">Cost:</label>
+      <span class="seller-product-info-title"> ${productinfo.cost} </span>
+      <br></br>
+      <label class="label-seller-product-title-info">Profit Margin per Item:</label>
+      <span class="seller-product-info-title"> {((productinfo.cost / productinfo.price) * 100).toFixed(2)}% </span>
+          <br></br>
       <img class="seller-product-info-image" src={productinfo.image} />
       <button class="seller-deletebutton" onClick={(e) => this.deleteOwnProduct(e, productinfo)}>Delete</button>
       </div>
@@ -44,13 +50,21 @@ class SellerProdContainer extends Component {
 
 
   render() {
-    // console.log(this.props.product)
-    // console.log(this.props.currentUser["user_id"])
+    console.log(this.props.product)
+    console.log(this.props.currentUser["user_id"])
+    // total amount of products per seller
+    let totalProducts;
+    if (this.props.currentUser) {
+       totalProducts = this.props.product.map(product => product.seller_id === this.props.currentUser["user_id"]).filter(product => product === true).length
+     }
+    console.log(totalProducts)
     return(
       <React.Fragment>
-        <p>{this.props.currentUser.username}</p>
+        <p class="seller-username">{this.props.currentUser.username}</p>
+        <AddProduct />
+        <p class="seller-currentProducts">{this.props.currentUser.username} Current Products</p>
+        <p class="seller-totalProducts">Total Amount of Products: {totalProducts}</p>
        {this.sellersProducts()}
-      <AddProduct />
       </React.Fragment>
     )
   }

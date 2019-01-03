@@ -82,7 +82,6 @@ clickedProduct = (event, clickedProduct) => {
 
 
 render() {
-  // console.log(this.props)
   const {product} = this.props
 
   var quantityArray = []
@@ -95,13 +94,14 @@ render() {
     <div class="main-home-product-container">
       <div class="secondary-home-container">
       <form onSubmit={(e) => this.handleSubmit(e, product)}>
-
+            <div class="product-image-home">
               <img class="home-product-image" src={product.image} onClick={(event) => this.clickedProduct(event, product)}/>
+            </div>
                 <a id="main-title">{product.title}</a>
                 <p class="home-product-name">{product.name} </p>
                 <p class="home-product-price"> ${product.price} </p>
-                <div>
-      </div>
+      <div>
+    </div>
 
       { parseInt(product.quantity) > 0 ?
         <React.Fragment>

@@ -77,6 +77,10 @@ render() {
   return(
 
     <React.Fragment>
+      <div class="add-product-sign">Add New Product</div>
+      <CloudinaryContext cloudName="deq2mkfpe">
+        <button id="upload_widget_opener" onClick={this.imageSubmit}><i class="camera icon"></i>Upload Your Product Image</button>
+      </CloudinaryContext>
       <form onSubmit={this.handleSubmit} class="add-product-form">
         <label>Title</label>
         <input name="title" type="text" onChange={this.handleChange} placeholder="Title" value={this.state.value}/>
@@ -87,19 +91,19 @@ render() {
           <label>Description</label>
           <input name="description" type="text" onChange={this.handleChange} placeholder="Description" value={this.state.value}/>
             <label>Cost</label>
-            <input name="cost" type="number" onChange={this.handleChange} placeholder="Cost" value={this.state.value}/>
+            <input name="cost" type="number" step="0.01" onChange={this.handleChange} placeholder="Cost" value={this.state.value}/>
                 <label>Weight</label>
-                <input name="weight" type="number" onChange={this.handleChange} placeholder="Weight" value={this.state.value}/>
+                <input name="weight" type="number" step="0.01" onChange={this.handleChange} placeholder="Weight" value={this.state.value}/>
                   <label>Quantity</label>
                   <input name="quantity" type="number" onChange={this.handleChange} placeholder="Quantity" value={this.state.value}/>
                     <label>Sku</label>
                     <input name="sku" type="number" onChange={this.handleChange} placeholder="Sku" value={this.state.value}/>
 
+
                     <button class="add-product-button"><i class="shop icon"></i>Add Product</button>
         </form>
-                      <CloudinaryContext cloudName="deq2mkfpe">
-                          <button id="upload_widget_opener" onClick={this.imageSubmit}><i class="camera icon"></i>Upload Your Image</button>
-                      </CloudinaryContext>
+
+
 
 
     </React.Fragment>
