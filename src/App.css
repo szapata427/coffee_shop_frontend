@@ -545,3 +545,14 @@ margin-left: 13px;
 font-size: 20px;
 margin-left: 13px;
 }
+
+.cart-totalinformation-container {
+  font-size: 18px;
+  text-align: center;
+  /* display: inline-block; */
+}
+
+/* .cart-totalprice {
+  display: inline-block;
+  margin: 10px 0;
+} */

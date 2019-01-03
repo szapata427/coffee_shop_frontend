@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 import { deletedCart } from '../Store/Actions/cartActions'
-import Checkout from './Checkout'
+// import Checkout from './Checkout'
 
 
 class CartProductsContainer extends Component {
@@ -25,7 +25,7 @@ class CartProductsContainer extends Component {
     return(
       <React.Fragment>
 
-      {this.props.productCart?
+      {this.props.productCart ?
     <React.Fragment>
       <div class="cart-page-main-container">
         <div class="secondary-cart-container">
@@ -39,8 +39,8 @@ class CartProductsContainer extends Component {
     </div>
     </React.Fragment>
 
-: null}
-  <Checkout theCarts={this.props.productCart} />
+: <div>Your Cart is Currently Empty</div>}
+
     </React.Fragment>
 
 
