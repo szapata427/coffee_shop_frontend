@@ -25,18 +25,14 @@ handleChange = (event, product) => {
 
 
 handleSubmit = (e, cartproduct ) => {
-  // console.log(this.props.currentUser)
-  // console.log(this.props.productInCart.carts)
-  console.log(cartproduct)
   e.preventDefault()
-  console.log(cartproduct, this.state)
-  console.log(this.state.quantitySelected)
+  // console.log(cartproduct, this.state)
+  // console.log(this.state.quantitySelected)
     // cartproduct["quantity"] = this.state.quantitySelected
     let quantitySel = this.state.quantitySelected
     let productPrice = cartproduct.price
     let totalCartPrice = quantitySel * productPrice
-    // console.log(totalCartPrice)
-    // console.log(cartproduct)
+
   this.setState({
     selectedProduct: cartproduct
   })
@@ -89,7 +85,6 @@ render() {
     quantityArray.push(i)
   }
 
-
   return (
     <div class="main-home-product-container">
       <div class="secondary-home-container">
@@ -103,14 +98,14 @@ render() {
       <div>
     </div>
 
-      { parseInt(product.quantity) > 0 ?
+      { parseInt(product.quantity) > 1 ?
         <React.Fragment>
           <select onChange={(event) => this.handleChange(event, product)} name="quantitySelected" class="ui dropdown"><option value="0">Qty</option>
             {quantityArray.map(num => <option value={num.toString()}>{num}</option> )}
           </select>
 
                 <button class="add-to-cart-button"><i class="shop icon"></i>Add To Cart</button>
-              </React.Fragment> : <span id="soldout">Sold Out</span>}
+              </React.Fragment> : <span className="soldout">Sold Out</span>}
       </form>
       </div>
     </div>

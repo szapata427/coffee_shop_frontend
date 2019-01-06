@@ -25,7 +25,7 @@ class CartProductsContainer extends Component {
     return(
       <React.Fragment>
 
-      {this.props.productCart ?
+      {this.props.productCart.length != 0 ?
     <React.Fragment>
       <div class="cart-page-main-container">
         <div class="secondary-cart-container">
