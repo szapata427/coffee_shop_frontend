@@ -29,7 +29,7 @@ class App extends Component {
     let token = localStorage.getItem('token')
     console.log(token)
     if (token) {
-      fetch(`http://localhost:3001/current_user`, {
+      fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
         // method: "POST",
         headers: {
           "Content-Type": "application/json",

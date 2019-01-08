@@ -32,7 +32,7 @@ handleSubmit = (event) => {
   // console.log(price.to_i)
 this.props.addProduct(this.state)
 
-fetch(`http://localhost:3001/products`, {
+fetch(`https://coffee-ecommerce-api.herokuapp.com/products`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

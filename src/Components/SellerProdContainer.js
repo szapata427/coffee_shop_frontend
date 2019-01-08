@@ -11,7 +11,7 @@ class SellerProdContainer extends Component {
     console.log(product)
     this.props.sellerDeleteProduct(product)
 
-    fetch(`http://localhost:3001/products/${product.id}`, {
+    fetch(`https://coffee-ecommerce-api.herokuapp.com/products/${product.id}`, {
       method: "delete"
     }).then(response => response.json())
     .then(resp => console.log(resp))

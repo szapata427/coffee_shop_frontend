@@ -24,7 +24,7 @@ export const cartOrdered = () => {
 
 export function fetchCart() {
   return (dispatch) => {
-    return  fetch(`http://localhost:3001/carts`)
+    return  fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`)
       .then(response => response.json())
       // .then(data => console.log(data))
       .then((data) => dispatch({type: "FETCH_CART", payload: data}))

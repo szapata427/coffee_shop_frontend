@@ -55,7 +55,7 @@ this.setState({
   selectedProduct: cartproduct
 })
 
-fetch(`http://localhost:3001/carts`, {
+fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

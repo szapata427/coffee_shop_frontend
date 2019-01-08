@@ -95,7 +95,7 @@ class Cart extends Component {
         let quantityRemaining = productQty - cartQty
         console.log(quantityRemaining)
 
-        return fetch(`http://localhost:3001/products/${product.id}`, {
+        return fetch(`https://coffee-ecommerce-api.herokuapp.com/products/${product.id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
