@@ -167,6 +167,11 @@ margin-bottom: 4px;
   border-bottom: 2px solid black;
 }
 
+.seller-addtocart {
+  color: red;
+  font-size: 15
+}
+
 
 
 #main-title {

@@ -104,8 +104,8 @@ render() {
             {quantityArray.map(num => <option value={num.toString()}>{num}</option> )}
           </select>
 
-                <button class="add-to-cart-button"><i class="shop icon"></i>Add To Cart</button>
-              </React.Fragment> : <span className="soldout">Sold Out</span>}
+                {this.props.currentUser.type === "Customer" ? <button class="add-to-cart-button"><i class="shop icon"></i>Add To Cart</button> : <div className="seller-addtocart">Customer Account Needed To Buy</div> }
+              </React.Fragment>  : <span className="soldout">Sold Out</span>}
       </form>
       </div>
     </div>
