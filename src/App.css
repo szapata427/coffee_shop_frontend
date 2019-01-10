@@ -394,10 +394,10 @@ width: 800px;
   border-bottom: 3px solid black;
 }
 
-/* ::placeholder {
+::placeholder {
   color: black;
   opacity: 1;
-} */
+}
 
 .seller-update-form {
   font-size: 10px;

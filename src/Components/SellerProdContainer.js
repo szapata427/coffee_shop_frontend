@@ -99,7 +99,7 @@ class SellerProdContainer extends Component {
       <input class="seller-product-info-title" placeholder={productinfo.cost} onChange={(event) => this.handleChange(event, productinfo)} name="cost"/>
       <br></br>
       <label class="label-seller-product-title-info">Profit Margin per Item:</label>
-      <input class="seller-product-info-title" placeholder={((productinfo.cost / productinfo.price) * 100).toFixed(2)}/>
+      <span class="seller-product-info-title" >{(((productinfo.price - productinfo.cost )/ productinfo.price) * 100).toFixed(2)}%</span>
           <br></br>
             <label class="label-seller-product-title-info">Current Quantity:</label>
             <input class="seller-product-info-title" placeholder={productinfo.quantity} onChange={(event) => this.handleChange(event, productinfo)} name="quantity"/>
