@@ -12,7 +12,7 @@ class CartProductsContainer extends Component {
     const cartId = cart.id
     this.props.deletedCart(cart)
 
-    fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cartId}`, {
+    fetch(`http://localhost:3001/carts/${cartId}`, {
       method: "delete"
     })
   }

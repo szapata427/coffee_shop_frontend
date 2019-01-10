@@ -331,6 +331,7 @@ margin: 0 auto !important;
   /* box-shadow: 0 0 5px 3px lightgreen; */
   font-family: 'Yantramanav', sans-serif;
   font-weight: 500;
+  display: relative;
 
 }
 
@@ -338,6 +339,7 @@ margin: 0 auto !important;
 padding-left: 4px;
 font-size: 16px;
 font-family: 'Yantramanav', sans-serif;
+width: 800px;
 
 }
 
@@ -350,6 +352,7 @@ font-family: 'Yantramanav', sans-serif;
   font-size: 17px;
   font-family: 'Yantramanav', sans-serif;
   color: black;
+  padding: 8px;
 }
 
 .seller-product-info {
@@ -362,6 +365,7 @@ font-family: 'Yantramanav', sans-serif;
   margin-bottom: 10px;
   margin-top: 10px;
   color: black;
+  padding: 6px;
 
 }
 .seller-product-info-title {
@@ -395,16 +399,39 @@ font-family: 'Yantramanav', sans-serif;
   opacity: 1;
 } */
 
+.seller-update-form {
+  font-size: 10px;
+}
+
 .seller-deletebutton {
   background-color: red;
   width: 120px;
   height: 50px;
   color: white;
-  float: right;
-  margin-right: 40px;
+  /* float: right; */
   font-size: 17px;
+  border-radius: 7px;
+
 
 }
+
+.deletebutton-div {
+  margin-left: 1210px;
+
+}
+
+.seller-editbutton {
+  background-color: white;
+  width: 120px;
+  height: 50px;
+  color: blue;
+  margin-left: 1210px;
+  font-size: 17px;
+  border-radius: 7px;
+
+
+}
+
 
 #upload_widget_opener {
   margin-bottom: 15px;
