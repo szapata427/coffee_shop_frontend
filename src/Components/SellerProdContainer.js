@@ -40,22 +40,22 @@ class SellerProdContainer extends Component {
   handleUpdateSubmit = (e, product) => {
     e.preventDefault()
     console.log("update button")
-  // fetch(`http://localhost:3001/products/${product.id}`, {
-  //   method: "PATCH",
-  //   headers: {
-  //     "Content-type": "application/json",
-  //     Accepts: "application/json"
-  //   },
-  //   body: JSON.stringify({
-  //     name: this.state.name,
-  //     title: this.state.title,
-  //     price: this.state.price,
-  //     description: this.state.description,
-  //     cost: this.state.cost,
-  //     quantity: this.state.quantity
-  //   })
-  // }).then(resp => resp.json())
-  //   .then(response => console.log(response))
+  fetch(`http://localhost:3001/products/${product.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+      Accepts: "application/json"
+    },
+    body: JSON.stringify({
+      name: this.state.name,
+      title: this.state.title,
+      price: this.state.price,
+      description: this.state.description,
+      cost: this.state.cost,
+      quantity: this.state.quantity
+    })
+  }).then(resp => resp.json())
+    .then(response => console.log(response))
 
 
   }
@@ -63,12 +63,12 @@ class SellerProdContainer extends Component {
   deleteOwnProduct = (e, product) => {
     e.preventDefault()
     console.log(product)
-    // this.props.sellerDeleteProduct(product)
-    //
-    // fetch(`http://localhost:3001/products/${product.id}`, {
-    //   method: "delete"
-    // }).then(response => response.json())
-    // .then(resp => console.log(resp))
+    this.props.sellerDeleteProduct(product)
+
+    fetch(`http://localhost:3001/products/${product.id}`, {
+      method: "delete"
+    }).then(response => response.json())
+    .then(resp => console.log(resp))
   }
 
   // editOwnProduct = (e, product) => {
