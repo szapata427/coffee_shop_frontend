@@ -12,7 +12,8 @@ class CartProductsContainer extends Component {
     const cartId = cart.id
     this.props.deletedCart(cart)
 
-    fetch(`http://localhost:3001/carts/${cartId}`, {
+    // fetch(`http://localhost:3001/carts/${cartId}`, {
+    fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cartId}`, {
       method: "delete"
     })
   }
