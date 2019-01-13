@@ -71,11 +71,6 @@ class SellerProdContainer extends Component {
     .then(resp => console.log(resp))
   }
 
-  // editOwnProduct = (e, product) => {
-  //   e.preventDefault()
-  //   console.log(product)
-  //   // return <div>I am going to be edited</div>
-  // }
 
   sellersProducts = () => {
     return this.props.product.filter(product => {
@@ -86,8 +81,8 @@ class SellerProdContainer extends Component {
             <label class="label-seller-product-info">Name:</label>
       <input class="seller-product-info" placeholder={productinfo.name}  onChange={(event) => this.handleChange(event, productinfo)} name="name"/>
       <br></br>
-      <label class="label-seller-product-info">Price:</label>
-      <input class="seller-product-info" placeholder={productinfo.price}  onChange={(event) => this.handleChange(event, productinfo)} name="price" />
+      <label class="label-seller-product-info">Price: $</label>
+      <input class="seller-product-info-price" placeholder={productinfo.price}  onChange={(event) => this.handleChange(event, productinfo)} name="price" />
       <br></br>
       <label class="label-seller-product-info">Description:</label>
       <textarea class="seller-product-description" placeholder={productinfo.description} onChange={(event) => this.handleChange(event, productinfo)} name="description"/>
@@ -95,14 +90,14 @@ class SellerProdContainer extends Component {
     <label class="label-seller-product-title-info">Title:</label>
       <input class="seller-product-info-title" placeholder={productinfo.title} onChange={(event) => this.handleChange(event, productinfo)} name="title"/>
       <br></br>
-      <label class="label-seller-product-title-info">Cost:</label>
-      <input class="seller-product-info-title" placeholder={productinfo.cost} onChange={(event) => this.handleChange(event, productinfo)} name="cost"/>
+      <label class="label-seller-product-title-info">Cost: $</label>
+      <input class="seller-product-info-price" placeholder={productinfo.cost} onChange={(event) => this.handleChange(event, productinfo)} name="cost"/>
       <br></br>
       <label class="label-seller-product-title-info">Profit Margin per Item:</label>
       <span class="seller-product-info-title" >{(((productinfo.price - productinfo.cost )/ productinfo.price) * 100).toFixed(2)}%</span>
           <br></br>
             <label class="label-seller-product-title-info">Current Quantity:</label>
-            <input class="seller-product-info-title" placeholder={productinfo.quantity} onChange={(event) => this.handleChange(event, productinfo)} name="quantity"/>
+            <input class="seller-product-info-price" placeholder={productinfo.quantity} onChange={(event) => this.handleChange(event, productinfo)} name="quantity"/>
                 <br></br>
       <img class="seller-product-info-image" src={productinfo.image} />
       <button class="seller-editbutton" >Update</button>

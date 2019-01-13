@@ -32,8 +32,8 @@ class CartProductsContainer extends Component {
       <p class="cart-page-name">{this.props.productCart.name}</p>
       <img class="cart-page-image"src={this.props.productCart.image}/>
         <p class="cart-page-quantity"> Quantity: {this.props.productCart.quantity}</p>
-        <p class="cart-page-price-per-item">Price per Item: ${this.props.productCart["total_price"] / this.props.productCart.quantity}</p>
-        <p class="cart-page-totalprice">Total Price: ${this.props.productCart["total_price"]} </p>
+        <p class="cart-page-price-per-item">Price per Item: ${parseInt(this.props.productCart["total_price"]/ this.props.productCart.quantity).toFixed(2)}</p>
+        <p class="cart-page-totalprice">Total Price: ${parseInt(this.props.productCart["total_price"]).toFixed(2)} </p>
         <button class="cart-delete-button" onClick={(event) => this.deleteCart(event, this.props.productCart)}>Delete</button>
         </div>
     </div>

@@ -326,12 +326,13 @@ margin: 0 auto !important;
   margin: 20px;
   padding-left: 10px;
   padding-bottom: 10px;
-  background-color: lightblue;
+  background-color: white;
   color: black;
   /* box-shadow: 0 0 5px 3px lightgreen; */
   font-family: 'Yantramanav', sans-serif;
   font-weight: 500;
   display: relative;
+  border: 3px solid lightblue;
 
 }
 
@@ -358,6 +359,13 @@ width: 800px;
 .seller-product-info {
   font-size: 16px;
   font-family: 'Yantramanav', sans-serif;
+  width: 200px;
+}
+
+.seller-product-info-price {
+  font-size: 16px;
+  font-family: 'Yantramanav', sans-serif;
+  width: 80px;
 }
 
 .label-seller-product-title-info{
@@ -371,6 +379,7 @@ width: 800px;
 .seller-product-info-title {
   font-size: 17px;
   font-family: 'Yantramanav', sans-serif;
+  width: 250px;
 }
 
 .add-product-form {
@@ -405,8 +414,8 @@ width: 800px;
 
 .seller-deletebutton {
   background-color: red;
-  width: 120px;
-  height: 50px;
+  width: 100px;
+  height: 40px;
   color: white;
   /* float: right; */
   font-size: 17px;
@@ -417,14 +426,16 @@ width: 800px;
 
 .deletebutton-div {
   margin-left: 1210px;
-
 }
 
 .seller-editbutton {
-  background-color: white;
-  width: 120px;
-  height: 50px;
-  color: blue;
+  display: absolute;
+  top: 500px;
+  right: 50px;
+  background-color: blue;
+  width: 100px;
+  height: 40px;
+  color: white;
   margin-left: 1210px;
   font-size: 17px;
   border-radius: 7px;
