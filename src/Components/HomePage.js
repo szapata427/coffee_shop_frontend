@@ -37,8 +37,8 @@ mapProducts = () => {
       return product.title.toLowerCase().search(this.state.searchWord.toLowerCase()) !== -1
     })
 
-  console.log(filteredArray)
-    return (this.props.coffeeProducts.allProducts ? <ProductContainer product={filteredArray} /> : null )
+  console.log(filteredArray.length)
+    return (filteredArray.length !== 0 ? <ProductContainer product={filteredArray} /> : <div className="home-productsearch-noresults">No Results Match. Try Again</div> )
   }
 }
 
