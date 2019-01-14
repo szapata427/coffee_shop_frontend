@@ -43,20 +43,20 @@ handleChange = (event, product) => {
 }
 
 handleSubmit = (e, cartproduct ) => {
-e.preventDefault()
-console.log(cartproduct, this.state)
-console.log(this.state.quantitySelected)
-  cartproduct["quantity"] = this.state.quantitySelected
-  let quantitySel = this.state.quantitySelected
-  let productPrice = cartproduct.price
-  let totalCartPrice = quantitySel * productPrice
+  e.preventDefault()
+  console.log(cartproduct, this.state)
+  console.log(this.state.quantitySelected)
+    cartproduct["quantity"] = this.state.quantitySelected
+    let quantitySel = this.state.quantitySelected
+    let productPrice = cartproduct.price
+    let totalCartPrice = quantitySel * productPrice
 
 this.setState({
   selectedProduct: cartproduct
 })
 
-// fetch(`http://localhost:3001/carts`, {
-fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
+fetch(`http://localhost:3001/carts`, {
+// fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -78,9 +78,8 @@ fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
 
 })
 
+
 }
-
-
 
 
 render() {

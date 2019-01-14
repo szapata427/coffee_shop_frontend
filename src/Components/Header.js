@@ -29,7 +29,7 @@ render() {
         Products
       </NavLink>
     </div>
-    
+
       {this.props.currentUser.type === "Customer" ? <div className="ui item"><NavLink to="/cart" style={{width: "100px", color: "black"}}>
         {this.props.currentUser.username} Cart
       </NavLink></div> : null}

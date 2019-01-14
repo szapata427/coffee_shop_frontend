@@ -16,9 +16,9 @@ class Cart extends Component {
     let token = localStorage.getItem('token')
     console.log(token)
     if (token) {
-      // fetch(`http://localhost:3001/current_user`, {
-      fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
-        method: "POST",
+      fetch(`http://localhost:3001/current_user`, {
+      // fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
+        // method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accepts: "application/json",
@@ -55,8 +55,8 @@ class Cart extends Component {
      this.props.cartOrdered()
 
      orderedCarts.forEach(cart => {
-       // return fetch(`http://localhost:3001/carts/${cart.id}`, {
-       return fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cart.id}`, {
+       return fetch(`http://localhost:3001/carts/${cart.id}`, {
+       // return fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cart.id}`, {
          method: "PATCH",
          headers: {
            "Content-Type": "application/json",
@@ -97,8 +97,8 @@ class Cart extends Component {
         let quantityRemaining = productQty - cartQty
         console.log(quantityRemaining)
 
-        // return fetch(`http://localhost:3001/products/${product.id}`, {
-        return fetch(`https://coffee-ecommerce-api.herokuapp.com/products/${product.id}`, {
+        return fetch(`http://localhost:3001/products/${product.id}`, {
+        // return fetch(`https://coffee-ecommerce-api.herokuapp.com/products/${product.id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",

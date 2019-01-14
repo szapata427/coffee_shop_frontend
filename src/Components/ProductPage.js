@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addProductCart } from '../Store/Actions/cartActions'
 import IndividualProductInfo from './IndividualProductInfo';
+import {withRouter} from 'react-router-dom'
 
 class ProductPage extends Component {
 
@@ -26,9 +27,8 @@ handleChange = (event, product) => {
 
 handleSubmit = (e, cartproduct ) => {
   e.preventDefault()
-  // console.log(cartproduct, this.state)
-  // console.log(this.state.quantitySelected)
-    // cartproduct["quantity"] = this.state.quantitySelected
+    console.log("hit here", this.props.currentUser)
+     if (this.props.currentUser) {
     let quantitySel = this.state.quantitySelected
     let productPrice = cartproduct.price
     let totalCartPrice = quantitySel * productPrice
@@ -48,8 +48,8 @@ handleSubmit = (e, cartproduct ) => {
   // if(this.props.productInCart.carts)
 
 
-  // fetch(`http://localhost:3001/carts`, {
-  fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
+  fetch(`http://localhost:3001/carts`, {
+  // fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -70,7 +70,12 @@ handleSubmit = (e, cartproduct ) => {
     this.props.addProductCart(cart)
 
   })
+  }
 
+  else {
+    alert("Need to log in to add to cart")
+    this.props.history.push("/login")
+  }
 }
 
 clickedProduct = (event, clickedProduct) => {
@@ -115,8 +120,6 @@ render() {
 }
 
 const mapStateToProps = state => {
-  // console.log(state.cartProducts.cartProducts)
-  // console.log(state.user.user)
   return {
     currentUser: state.user.user,
     productInCart: state.cartProducts.cartProducts
@@ -134,4 +137,4 @@ const mapDispatchToProps = (dispatch) => {
 // <input value={this.state.value} type="text" onChange={(event) => this.handleChange(event, product)} />
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);
+export default withRouter (connect(mapStateToProps, mapDispatchToProps)(ProductPage));

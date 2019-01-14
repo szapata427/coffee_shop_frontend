@@ -12,8 +12,6 @@ import Checkout from '../src/Components/Checkout'
 import IndividualProductInfo from '../src/Components/IndividualProductInfo'
 import { currentUser } from '../src/Store/Actions/userActions'
 
-
-
 // import { Route, Switch, withRouter } from "react-router-dom";
 import { BrowserRouter as Router, Switch, withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
@@ -29,8 +27,8 @@ class App extends Component {
     let token = localStorage.getItem('token')
     console.log(token)
     if (token) {
-      // fetch(`http://localhost:3001/current_user`, {
-      fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
+      fetch(`http://localhost:3001/current_user`, {
+      // fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
         // method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,9 +38,6 @@ class App extends Component {
       }).then(response => response.json())
       .then(resp => {
         console.log(resp);
-        // this.setState({
-        //   user:resp
-        // })
         this.props.currentUser(resp)
         if (resp.type === "Seller") {
 
