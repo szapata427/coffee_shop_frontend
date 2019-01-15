@@ -5,14 +5,6 @@ import {connect} from 'react-redux';
 
 class Checkout extends Component {
 
-  // totalInformation = () => {
-  //   let productsinCart;
-  //   if (this.props.cartProducts) {
-  //      productsinCart = this.props.cartProducts.carts.filter(product => product.user_id === this.props.currentUser.user_id)
-  //   }
-  //
-  // }
-
   render() {
 
     // console.log(this.props.cartProducts.carts)

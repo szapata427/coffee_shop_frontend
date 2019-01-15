@@ -71,7 +71,7 @@ class LoginForm extends Component {
         <div class="column">
           <h2 class="ui image header">
             <div class="content">
-              Sign -in to your account
+              Log In
             </div>
           </h2>
         <form onSubmit={(e) => this.signInhandleSubmit(e)} class="ui large form" >

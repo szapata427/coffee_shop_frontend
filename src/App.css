@@ -115,17 +115,24 @@ label {
 }
 
 .ui.category.search {
-  font-size: 17px !important;
-  float: right !important;
-  padding-right: 80px;
+  font-size: 20px !important;
+  float: left !important;
+  padding-left: 80px;
   color: green !important;
-  weight: 700px !important;
+  font-weight: 700 !important;
   margin-top: 20px;
 }
 
+.prompt::-webkit-input-placeholder{
+  color: black !important;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .ui.icon.input {
-  color: blue !important;
-  weight: 700 !important;
+  /* font-weight:  700 !important; */
+  color: black !important;
+  font-weight: 500;
 }
 
 
@@ -202,11 +209,14 @@ margin-bottom: 4px;
 }
 
 div.content {
-  background: rgb(219, 245, 244) !important;
+  /* background: rgb(219, 245, 244) !important; */
   /* border-style: solid !important; */
  /* border-color: rgb(219, 245, 244) !important; */
+ /* border: 3px solid black; */
  border-radius: 7px !important;
  margin-top: 30px;
+ font-size: 40px;
+ margin-bottom: 20px;
 }
 
 /* img {

@@ -49,7 +49,7 @@ render() {
       <SaleHeader />
         <div class="ui category search" >
         <div class="ui icon input">
-            <input onChange={(event) => this.handleChange(event)} class="prompt" type="text" name="searchWord" placeholder="Search Product..." />
+            <input onChange={(event) => this.handleChange(event)} class="prompt" type="text" name="searchWord" placeholder="Search Product..."/>
           <i class="search icon"></i>
         </div>
       </div>
