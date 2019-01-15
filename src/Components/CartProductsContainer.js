@@ -28,17 +28,53 @@ componentDidMount() {
   })
 }
 
-minusQuantity = (event) => {
-  console.log(event)
+minusQuantity = (cart) => {
+  // console.log(cart)
   this.setState({
-    count: this.state.count - 1
-  }, () => console.log(this.state))
+    count: --this.state.count
+  })
+
+  let updatedQuantity = this.state.count.toString()
+  // console.log(updatedQuantity)
+
+  fetch(`http://localhost:3001/carts/${cart.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      quantity: updatedQuantity
+    })
+  }).then(response => response.json())
+  .then(resp => console.log(resp))
 }
 
-plusQuantity = () => {
+plusQuantity = (cart) => {
+  console.log(cart)
   this.setState({
-    count: ++this.state.count 
+    count: ++this.state.count
   }, () => console.log(this.state))
+
+  let addingOne = this.state.count.toString()
+  console.log(addingOne)
+
+  fetch(`http://localhost:3001/carts/${cart.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      quantity: addingOne
+    })
+  }).then(response => response.json())
+  .then(resp => console.log(resp))
+
+
+
+
+
 }
 
 
@@ -57,9 +93,9 @@ plusQuantity = () => {
         <p class="cart-page-quantity"> Quantity: {this.props.productCart.quantity}</p>
         <p class="cart-page-price-per-item">Price per Item: ${parseInt(this.props.productCart["total_price"]/ this.props.productCart.quantity).toFixed(2)}</p>
         <p class="cart-page-totalprice">Total Price: ${parseInt(this.props.productCart["total_price"]).toFixed(2)} </p>
-        <button className="minus-cart-button" onClick={this.minusQuantity}>-</button>
+        <button className="minus-cart-button" onClick={() => this.minusQuantity(this.props.productCart)}>-</button>
         <div className="cart-quantity-form">{this.state.count}</div>
-        <button className="plus-cart-button" onClick={this.plusQuantity} >+</button>
+        <button className="plus-cart-button" onClick={() => this.plusQuantity(this.props.productCart)} >+</button>
         <button class="cart-delete-button" onClick={(event) => this.deleteCart(event, this.props.productCart)}>Delete</button>
         </div>
     </div>
