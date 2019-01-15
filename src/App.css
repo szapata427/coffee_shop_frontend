@@ -629,6 +629,29 @@ margin-left: 13px;
   padding-top: 10px;
 }
 
+.minus-cart-button {
+  /* padding-bottom: 10px; */
+  height: 30px;
+  width: 30px;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+
+.plus-cart-button {
+  /* padding-bottom: 10px; */
+  height: 30px;
+  width: 30px;
+  margin-left: 12px;
+  margin-right: 12px;
+
+}
+
+.cart-quantity-form {
+  font-size: 22px;
+  height: 20px;
+  padding-top: 4px;
+}
+
 /* .cart-totalprice {
   display: inline-block;
   margin: 10px 0;

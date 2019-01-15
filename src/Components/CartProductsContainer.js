@@ -7,6 +7,10 @@ import { deletedCart } from '../Store/Actions/cartActions'
 
 class CartProductsContainer extends Component {
 
+  state = {
+    count: 0
+  }
+
   deleteCart = (e, cart) => {
     console.log(cart)
     const cartId = cart.id
@@ -18,6 +22,24 @@ class CartProductsContainer extends Component {
     })
   }
 
+componentDidMount() {
+  this.setState({
+    count: this.props.productCart.quantity
+  })
+}
+
+minusQuantity = (event) => {
+  console.log(event)
+  this.setState({
+    count: this.state.count - 1
+  }, () => console.log(this.state))
+}
+
+plusQuantity = () => {
+  this.setState({
+    count: ++this.state.count 
+  }, () => console.log(this.state))
+}
 
 
 
@@ -35,6 +57,9 @@ class CartProductsContainer extends Component {
         <p class="cart-page-quantity"> Quantity: {this.props.productCart.quantity}</p>
         <p class="cart-page-price-per-item">Price per Item: ${parseInt(this.props.productCart["total_price"]/ this.props.productCart.quantity).toFixed(2)}</p>
         <p class="cart-page-totalprice">Total Price: ${parseInt(this.props.productCart["total_price"]).toFixed(2)} </p>
+        <button className="minus-cart-button" onClick={this.minusQuantity}>-</button>
+        <div className="cart-quantity-form">{this.state.count}</div>
+        <button className="plus-cart-button" onClick={this.plusQuantity} >+</button>
         <button class="cart-delete-button" onClick={(event) => this.deleteCart(event, this.props.productCart)}>Delete</button>
         </div>
     </div>
