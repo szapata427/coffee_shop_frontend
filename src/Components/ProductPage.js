@@ -31,7 +31,6 @@ handleSubmit = (e, cartproduct ) => {
     let quantitySel = this.state.quantitySelected
     let productPrice = cartproduct.price
     let totalCartPrice = quantitySel * productPrice
-
   this.setState({
     selectedProduct: cartproduct
   })
@@ -57,7 +56,7 @@ handleSubmit = (e, cartproduct ) => {
     body: JSON.stringify({
       name: cartproduct.name,
       quantity: this.state.quantitySelected,
-      total_price: totalCartPrice,
+      total_price: totalCartPrice.toFixed(2),
       ordered: false,
       user_id: this.props.currentUser.user_id,
       product_id: cartproduct.id,
