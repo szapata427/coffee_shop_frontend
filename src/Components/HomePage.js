@@ -43,7 +43,6 @@ mapProducts = () => {
 }
 
 render() {
-  // console.log(this.props.coffeeProducts.allProducts)
   return(
 
     <div>

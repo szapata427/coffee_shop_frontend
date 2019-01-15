@@ -327,9 +327,17 @@ margin: 0 auto !important;
 }
 
 #signup-select {
-  width: 130px ;
-  background-color: grey;
+  width: 200px;
+  background-color: #21BA45;
   color: white;
+  padding-bottom: 15px;
+  margin: auto;
+  margin-bottom: 15px;
+  /* font-size: 15px; */
+  /* font-weight: 700; */
+  font-size: 1rem;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 

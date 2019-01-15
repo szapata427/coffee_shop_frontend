@@ -27,7 +27,6 @@ handleChange = (event, product) => {
 
 handleSubmit = (e, cartproduct ) => {
   e.preventDefault()
-    console.log("hit here", this.props.currentUser)
      if (this.props.currentUser) {
     let quantitySel = this.state.quantitySelected
     let productPrice = cartproduct.price
@@ -66,8 +65,16 @@ handleSubmit = (e, cartproduct ) => {
     })
   }).then(response => response.json())
   .then(cart => {
-    // console.log(cart)
-    this.props.addProductCart(cart)
+    console.log(cart)
+    if (cart.message !== "error: could not add to cart") {
+
+      this.props.addProductCart(cart)
+    }
+
+    else {
+      alert("Quantity must be at least 1")
+    }
+
 
   })
   }
