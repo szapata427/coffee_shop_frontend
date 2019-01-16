@@ -35,8 +35,8 @@ class SignUpForm extends Component {
     // debugger
     // const newuser = this.state.user
     // this.props.createNewUser(newuser)
-    fetch(`http://localhost:3001/users`, {
-    // fetch(`https://coffee-ecommerce-api.herokuapp.com/users`, {
+    // fetch(`http://localhost:3001/users`, {
+    fetch(`https://coffee-ecommerce-api.herokuapp.com/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

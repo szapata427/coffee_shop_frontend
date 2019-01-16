@@ -46,8 +46,8 @@ handleSubmit = (e, cartproduct ) => {
   // if(this.props.productInCart.carts)
 
 
-  fetch(`http://localhost:3001/carts`, {
-  // fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
+  // fetch(`http://localhost:3001/carts`, {
+  fetch(`https://coffee-ecommerce-api.herokuapp.com/carts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
