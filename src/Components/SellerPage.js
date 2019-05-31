@@ -12,7 +12,7 @@ class SellerPage extends Component{
     console.log(token)
     if (token) {
       // fetch(`http://localhost:3001/current_user`, {
-      fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
+      fetch(`http://localhost:3005/current_user`, {
         // method: "POST",
         headers: {
           "Content-Type": "application/json",

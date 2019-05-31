@@ -17,7 +17,7 @@ class Cart extends Component {
     console.log(token)
     if (token) {
       // fetch(`http://localhost:3001/current_user`, {
-      fetch(`https://coffee-ecommerce-api.herokuapp.com/current_user`, {
+      fetch(`https://localhost:3005/current_user`, {
         // method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ class Cart extends Component {
 
      orderedCarts.forEach(cart => {
        // return fetch(`http://localhost:3001/carts/${cart.id}`, {
-       return fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cart.id}`, {
+       return fetch(`https://localhost:3005/carts/${cart.id}`, {
          method: "PATCH",
          headers: {
            "Content-Type": "application/json",
@@ -98,7 +98,7 @@ class Cart extends Component {
         console.log(quantityRemaining)
 
         // return fetch(`http://localhost:3001/products/${product.id}`, {
-        return fetch(`https://coffee-ecommerce-api.herokuapp.com/products/${product.id}`, {
+        return fetch(`https://localhost:3005/products/${product.id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",

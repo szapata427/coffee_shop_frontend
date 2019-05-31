@@ -19,7 +19,7 @@ class CartProductsContainer extends Component {
     this.props.deletedCart(cart)
 
     // fetch(`http://localhost:3001/carts/${cartId}`, {
-    fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cartId}`, {
+    fetch(`https://localhost:3005/carts/${cartId}`, {
       method: "delete"
     })
   }
@@ -46,7 +46,7 @@ minusQuantity = (cart) => {
     let updatedQuantity = this.state.count.toString()
 
     // fetch(`http://localhost:3001/carts/${cart.id}`, {
-    fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cart.id}`, {
+    fetch(`https://localhost:3005/carts/${cart.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +78,7 @@ plusQuantity = (cart) => {
     let addingOne = this.state.count.toString()
 
     // fetch(`http://localhost:3001/carts/${cart.id}`, {
-    fetch(`https://coffee-ecommerce-api.herokuapp.com/carts/${cart.id}`, {
+    fetch(`https://localhost:3005/carts/${cart.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

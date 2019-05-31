@@ -29,7 +29,7 @@ class LoginForm extends Component {
     e.preventDefault()
     console.log("here", this.state.user)
     // fetch(`http://localhost:3001/login`, {
-    fetch(`https://coffee-ecommerce-api.herokuapp.com/login`, {
+    fetch(`https://localhost:3005/login`, {
       method: "POST",
       headers: {
         "Content-Type": 'application/json',
@@ -93,7 +93,7 @@ class LoginForm extends Component {
           </div>
           <div class="ui error message"></div>
       </form>
-      Not a member?<a href="https://coffee-ecommerce-api.herokuapp.com/signup">  Sign Up</a>
+      Not a member?<a href="https://localhost:3005/signup">  Sign Up</a>
     </div>
     </div>
     </React.Fragment>
